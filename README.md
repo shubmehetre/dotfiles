@@ -1,2 +1,4 @@
 # dotfiles
-complete home folder containing configs 
+
+---
+My complete home folder as a repo
