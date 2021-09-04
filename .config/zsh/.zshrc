@@ -84,6 +84,8 @@ function cd {
 }
 
 # restore last saved path
-if [ -f ~/.cache/last_dir ]
-    then cd `cat ~/.cache/last_dir`
-fi
+# last_dir_file=$XDG_CACHE_HOME/last_dir
+# touch -a $last_dir_file || touch $last_dir_file
+# if [ -f $last_dir_file ]
+#     then cd `cat $last_dir_file`
+# fi
