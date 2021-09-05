@@ -123,10 +123,10 @@ set noshowcmd
 	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
 
 " Recompile dwm on config edit. Caution: THIS WILL LOGOUT YOUR SESSION
-	autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/;cp -f config.h ~/.local/src/src_configs/dwm/config.h; sudo make install; notify-send "dwm : Logout to see changes"
+	autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install; notify-send "dwm : Logout to see changes"
 
 " Recompile st on config edit.
-	autocmd BufWritePost ~/.local/src/st/config.h !cd ~/.local/src/st/; cp -f config.h ~/.local/src/src_configs/st; sudo make install && { setsid -f st }
+	autocmd BufWritePost ~/.local/src/st/config.h !cd ~/.local/src/st/; sudo make install && { setsid -f st }
 
 " Recompile dwmblocks on config edit.
 	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
