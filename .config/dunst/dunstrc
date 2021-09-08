@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x5-0+24"
+    geometry = "550x8-0+24"
     indicate_hidden = yes
     shrink = yes
     transparency = 20
@@ -82,7 +82,7 @@
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#458588"
+    background = "#a71877"
     foreground = "#ebdbb2"
     timeout = 5
 

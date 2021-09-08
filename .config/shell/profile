@@ -6,7 +6,7 @@
 # to clean up.
 
 # Adds `~/.local/bin` to $PATH and also .local/bin/'s subfolders
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%:*}"
 
 unsetopt PROMPT_SP
 
