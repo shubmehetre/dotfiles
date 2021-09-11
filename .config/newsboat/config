@@ -1,5 +1,5 @@
 # show-read-feeds no
-auto-reload yes
+auto-reload no
 
 external-url-viewer "urlscan -dc -r 'w3m {}'"
 
@@ -43,7 +43,7 @@ macro m set browser "setsid -f mpv" ; open-in-browser ; set browser w3m
 macro w set browser "brave" ; open-in-browser ; set browser w3m
 macro d set browser "dmenuhandler" ; open-in-browser ; set browser w3m
 macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser w3m
-# macro y set browser "youtube-viewer" ; open-in-browser ; set browser w3m
+# macro y set browser "youtube-viewer" ; open-in-browser ; set browser w3m (just use mpv)
 macro p set browser "peerflix" ; open-in-browser ; set browser w3m
 macro P set browser "peertubetorrent %u 1080" ; open-in-browser ; set browser w3m
 
