@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader=";"
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -17,6 +17,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
+Plug 'gioele/vim-autoswap'
 call plug#end()
 
 set title
@@ -51,7 +52,8 @@ set noshowcmd
 	set splitbelow splitright
 
 " Nerd tree
-	map <leader>n :NERDTreeToggle<CR>
+	map <silent> <leader>n :NERDTreeToggle<CR>
+	" autocmd VimEnter * NERDTree
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     if has('nvim')
         let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
@@ -79,8 +81,8 @@ set noshowcmd
 	map <leader>s :!clear && shellcheck -x %<CR>
 
 " Open my bibliography file in split
-	map <leader>b :vsp<space>$BIB<CR>
-	map <leader>r :vsp<space>$REFER<CR>
+	"map <leader>b :vsp<space>$BIB<CR>
+	"map <leader>r :vsp<space>$REFER<CR>
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
@@ -102,8 +104,15 @@ set noshowcmd
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
+" Save and Save-as
+	map <C-s> :w<CR>
+
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Start NERDTree when Vim is started without file arguments.
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 " Enable Goyo by default for mutt writing
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
@@ -153,13 +162,15 @@ function! ToggleHiddenAll()
         set showcmd
     endif
 endfunction
-nnoremap <leader>h :call ToggleHiddenAll()<CR>
+nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
 
 " Auto Complete braces, paranthesis, etc
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap {<CR> {<CR>}<Esc>O
-inoremap [ []<Esc>i
-inoremap < <><Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
+	inoremap ( ()<Esc>i
+	inoremap { {}<Esc>i
+	inoremap {<CR> {<CR>}<Esc>O
+	inoremap [ []<Esc>i
+	inoremap < <><Esc>i
+	" inoremap ' ''<Esc>i
+	" inoremap " ""<Esc>i
+
+" Swap exists event
