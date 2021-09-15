@@ -41,7 +41,8 @@ set t_ZR=^[[23m
 	hi Visual ctermfg=Black
 	hi MatchParen cterm=bold,reverse
 	hi MatchParen ctermfg=Black
-
+	hi CursorLine cterm=bold ctermbg=cyan ctermfg=Black
+	" hi Directory ctermfg=red
 " Some basics:
 	nnoremap c "_c
 	set nocompatible

@@ -38,7 +38,7 @@ alias \
 	ka="killall" \
 	g="git" \
 	gs="git status" \
-	gc="git commit -a" \
+	ga="git commit -a" \
 	gp="git push" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
