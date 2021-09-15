@@ -28,3 +28,4 @@ hash -d cfl=/home/doom/.config/lf/lfrc
 hash -d cfL=/home/doom/.config/lf/scope 
 hash -d cfX=/home/doom/.config/sxiv/exec/key-handler 
 hash -d cfs=/home/doom/.config/shell/shortcutrc 
+hash -d cfy=/home/doom/.config/alacritty/alacritty.yml 

@@ -10,6 +10,7 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
@@ -30,6 +31,16 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+
+" highlighting stuff (for more groups=> :hi) :
+	set hlsearch
+	hi Search ctermfg=White
+	hi Search ctermbg=Red
+	hi Visual ctermfg=Black
+	hi MatchParen cterm=bold,reverse
+	hi MatchParen ctermfg=Black
 
 " Some basics:
 	nnoremap c "_c
@@ -38,6 +49,7 @@ set noshowcmd
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+	nnoremap <silent> <esc> :noh<cr><esc>
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -45,9 +57,9 @@ set noshowcmd
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<C>
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+"	map <leader>g :Goyo \| set bg=light \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+"	map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
@@ -167,10 +179,8 @@ nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
 " Auto Complete braces, paranthesis, etc
 	inoremap ( ()<Esc>i
 	inoremap { {}<Esc>i
-	inoremap {<CR> {<CR>}<Esc>O
 	inoremap [ []<Esc>i
 	inoremap < <><Esc>i
 	" inoremap ' ''<Esc>i
 	" inoremap " ""<Esc>i
-
-" Swap exists event
+	" inoremap {<CR> {<CR>}<Esc>O

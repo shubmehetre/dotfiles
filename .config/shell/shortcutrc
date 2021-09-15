@@ -29,3 +29,4 @@ cfl="$EDITOR /home/doom/.config/lf/lfrc" \
 cfL="$EDITOR /home/doom/.config/lf/scope" \
 cfX="$EDITOR /home/doom/.config/sxiv/exec/key-handler" \
 cfs="$EDITOR /home/doom/.config/shell/shortcutrc" \
+cfy="$EDITOR /home/doom/.config/alacritty/alacritty.yml" \
