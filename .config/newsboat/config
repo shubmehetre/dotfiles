@@ -3,6 +3,10 @@ auto-reload no
 
 external-url-viewer "urlscan -dc -r 'w3m {}'"
 
+# for podcasts
+player "mpv"
+download-path "/home/doom/.local/share/newsboat/nb_downloads"
+
 bind-key j down
 bind-key k up
 bind-key j next articlelist

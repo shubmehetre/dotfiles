@@ -27,8 +27,10 @@ alias \
 
 # Colorize commands when possible.
 alias \
-	ls="ls -hN --color=auto --group-directories-first" \
-	ll="ls -halN --color=auto --group-directories-first" \
+	ls="exa -h --color=auto --group-directories-first" \
+	l="exa	-al --color=auto --group-directories-first" \
+	ll="exa	-al --color=auto --group-directories-first" \
+	lll="exa -al --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
@@ -36,7 +38,6 @@ alias \
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
-	g="git" \
 	gs="git status" \
 	ga="git commit -a" \
 	gp="git push" \

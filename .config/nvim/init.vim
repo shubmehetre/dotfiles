@@ -31,6 +31,7 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
+set shortmess+=A
 set t_ZH=^[[3m
 set t_ZR=^[[23m
 
@@ -41,8 +42,9 @@ set t_ZR=^[[23m
 	hi Visual ctermfg=Black
 	hi MatchParen cterm=bold,reverse
 	hi MatchParen ctermfg=Black
-	hi CursorLine cterm=bold ctermbg=cyan ctermfg=Black
-	" hi Directory ctermfg=red
+	hi CursorLine cterm=NONE ctermbg=black ctermfg=DarkRed
+	hi Folded ctermfg=7 ctermbg=242
+	hi FoldColumn ctermfg=7
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
@@ -185,3 +187,16 @@ nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
 	" inoremap ' ''<Esc>i
 	" inoremap " ""<Esc>i
 	" inoremap {<CR> {<CR>}<Esc>O
+	" Go to tab by number
+
+" Jump to tab using leader
+ 	noremap <leader>1 1gt
+ 	noremap <leader>2 2gt
+ 	noremap <leader>3 3gt
+ 	noremap <leader>4 4gt
+ 	noremap <leader>5 5gt
+ 	noremap <leader>6 6gt
+ 	noremap <leader>7 7gt
+ 	noremap <leader>8 8gt
+ 	noremap <leader>9 9gt
+ 	noremap <leader>0 :tablast<cr>

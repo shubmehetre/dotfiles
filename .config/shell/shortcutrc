@@ -12,6 +12,7 @@ pp="cd /home/doom/Pictures && ls -a" \
 sc="cd /home/doom/.local/bin && ls -a" \
 src="cd /home/doom/.local/src && ls -a" \
 vv="cd /home/doom/Videos && ls -a" \
+nbd="cd /home/doom/.local/share/newsboat/nb_downloads/ && ls -a" \
 bf="$EDITOR /home/doom/.config/shell/bm-files" \
 bd="$EDITOR /home/doom/.config/shell/bm-dirs" \
 cfx="$EDITOR /home/doom/.config/x11/xresources" \
