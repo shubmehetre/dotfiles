@@ -200,3 +200,10 @@ nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
  	noremap <leader>8 8gt
  	noremap <leader>9 9gt
  	noremap <leader>0 :tablast<cr>
+
+" remember the folds and prev state
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END

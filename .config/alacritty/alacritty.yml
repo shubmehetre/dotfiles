@@ -300,6 +300,7 @@ schemes:
         magenta: '#ff92d0'
         cyan:    '#9aedfe'
         white:   '#e6e6e6'
+
 # Choose ONE color scheme from those available in the above list.
 colors: *dracula
 
