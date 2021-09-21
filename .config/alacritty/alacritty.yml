@@ -100,92 +100,23 @@ scrolling:
 
 # Font configuration
 font:
-  # Normal (roman) font face
-  normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: Source Code Pro
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-
-    # The `style` can be specified to pick a specific face.
-    style: Regular
-
-  # Bold font face
-  bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Source Code Pro
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold
-
-  # Italic font face
-  italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Source Code Pro
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofuritalic Nerd Font Mono
-    # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-
-    # The `style` can be specified to pick a specific face.
-    style: Italic
-
-  # Bold italic font face
-  bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Source Code Pro
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofuritalic Nerd Font Mono
-    # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold Italic
-
-  # Point size
-  size: 10.0
+    normal:
+        family: JetBrainsMono Nerd Font Mono
+        style: Regular
+    bold:
+        family: JetBrains Mono Medium
+        style: Bold
+    italic:
+        family: JetBrains Mono Medium
+        style: Italic
+# Point size
+    size: 8.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
-  offset:
-    x: 0
-    y: 1
+offset:
+  x: 0
+  y: 1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -215,36 +146,6 @@ draw_bold_text_with_bright_colors: true
 
 # COLOR SCHEMES
 schemes:
-  # Doom One
-  doom-one: &doom-one
-    primary:
-      background: '#282c34'
-      foreground: '#ffffff'
-    cursor:
-      text: CellBackground
-      cursor: '#528bff'
-    selection:
-      text: CellForeground
-      background: '#3e4451'
-    normal:
-      black:   '#1c1f24'
-      red:     '#ff6c6b'
-      green:   '#98be65'
-      yellow:  '#da8548'
-      blue:    '#51afef'
-      magenta: '#c678dd'
-      cyan:    '#5699af'
-      white:   '#202328'
-    bright:
-      black:   '#5b6268'
-      red:     '#da8548'
-      green:   '#4db5bd'
-      yellow:  '#ecbe7b'
-      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
-      magenta: '#a9a1e1'
-      cyan:    '#46d9ff'
-      white:   '#dfdfdf'
-
   # Dracula
   dracula: &dracula
     colors:
@@ -291,15 +192,6 @@ schemes:
         magenta: '#ff46b0'
         cyan:    '#59dffc'
         white:   '#e6e6d1'
-      dim:
-        black:   '#4d4d4d'
-        red:     '#ff6e67'
-        green:   '#5af78e'
-        yellow:  '#f4f99d'
-        blue:    '#caa9fa'
-        magenta: '#ff92d0'
-        cyan:    '#9aedfe'
-        white:   '#e6e6e6'
 
 # Choose ONE color scheme from those available in the above list.
 colors: *dracula
@@ -334,7 +226,7 @@ colors: *dracula
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 0.98
 # background_opacity: 0.80
 
 #selection:

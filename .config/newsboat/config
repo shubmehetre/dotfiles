@@ -4,6 +4,7 @@ auto-reload no
 external-url-viewer "urlscan -dc -r 'w3m {}'"
 
 # for podcasts
+# go to the podcast rss, press 'e' to enqueue, in new terminal type podboat to see all queued podcats
 player "mpv"
 download-path "/home/doom/.local/share/newsboat/nb_downloads"
 
