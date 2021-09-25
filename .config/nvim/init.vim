@@ -10,7 +10,6 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
-" Plug 'neoclide/coc.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
@@ -28,6 +27,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
@@ -37,9 +37,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-
+""Plug 'hrsh7th/cmp-vsnip'
+""Plug 'hrsh7th/vim-vsnip'
 " ui
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'gruvbox-community/gruvbox'
@@ -53,7 +52,8 @@ call plug#end()
 let g:gruvbox_italic=1
 colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
-
+""let g:gruvbox_contrast_dark = 'hard' " set darker bg
+""let g:gruvbox_invert_selection='0'
 
 set title
 set bg=dark
@@ -101,14 +101,8 @@ set shortmess+=A
 	vnoremap J :m '>+1<CR>gv=gv
 	vnoremap K :m '<-2<CR>gv=gv
 
-" configure expanding of tabs for various file types
-""au BufRead,BufNewFile *.py set expandtab
-""au BufRead,BufNewFile *.c set expandtab
-""au BufRead,BufNewFile *.h set expandtab
-""au BufRead,BufNewFile Makefile* set noexpandtab
 
 " Enable autocompletion:
-
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -121,7 +115,9 @@ set shortmess+=A
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
-" Nerd tree
+"""""""""""""
+" Nerd tree "
+"""""""""""""
 	map <silent> <leader>n :NERDTreeToggle<CR>
 	" autocmd VimEnter * NERDTree
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -137,6 +133,16 @@ set shortmess+=A
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+
+" Split resizing
+nnoremap <C-Left> <cmd>vertical resize +3<CR>
+nnoremap <C-Right> <cmd>vertical resize -3<CR>
+nnoremap <C-Up> <cmd>resize +3<CR>
+nnoremap <C-Down> <cmd>resize -3<CR>
+inoremap <C-Left> <cmd>vertical resize +3<CR>
+inoremap <C-Right> <cmd>vertical resize -3<CR>
+inoremap <C-Up> <cmd>resize +3<CR>
+inoremap <C-Down> <cmd>resize -3<CR>
 
 " Replace ex mode with gq
 	map Q gq
@@ -258,7 +264,9 @@ nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
  	noremap <leader>9 9gt
  	noremap <leader>0 :tablast<cr>
 	nnoremap <leader>t :tabnew<CR>
+
 " <tab> / <s-tab> | Circular windows navigation
+nnoremap <leader>t :tabnew<CR>
 nnoremap <tab> :tabn<cr>
 nnoremap <S-tab> :tabp<cr>
 
@@ -281,51 +289,41 @@ tnoremap <Esc><Esc> <C-\><C-n>
 tnoremap <Leader>q <C-\><C-n>:q<CR>
 
 " >> Lsp key bindings
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> K     <cmd>Lspsaga hover_doc<CR>
-nnoremap <silent> <C-k> <cmd>Lspsaga signature_help<CR>
-nnoremap <silent> <C-p> <cmd>Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <C-n> <cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
-xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
-autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics()
+nnoremap <silent>   <Leader>gd	<cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent>   <Leader>gr 	<cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent>   <Leader>gf  <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent>   <Leader>dh 	<cmd>lua vim.lsp.buf.document_highlight()<CR>
+nnoremap <silent>   <Leader>di 	<cmd>lua vim.lsp.buf.document_implementation()<CR>
+nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev({enable_popup = false})<CR>
+nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = false})<CR>
 
+nnoremap <silent>   <Leader>cr    <cmd>Lspsaga rename<CR>
+nnoremap <silent>   <Leader>ch 	  <cmd>Lspsaga hover_doc<CR>
+nnoremap <silent>   <Leader>cs 	  <cmd>Lspsaga signature_help<CR>
+nnoremap <silent>   <leader>cd    <cmd>Lspsaga show_line_diagnostics<CR>
+nnoremap <silent>   <leader>ca    <cmd>Lspsaga code_action<CR>
+" autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics()
 ""nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 ""nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
 ""nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
 
-" >> Telescope bindings
-nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
-" most recently used files
-nnoremap <Leader>fo <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
-" find buffer
-nnoremap , <cmd>lua require'telescope.builtin'.buffers{}<CR>
-" find in current buffer
-nnoremap <Leader>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
-" bookmarks
-nnoremap <Leader>' <cmd>lua require'telescope.builtin'.marks{}<CR>
-" git files
-nnoremap <Leader>fg <cmd>lua require'telescope.builtin'.git_files{}<CR>
-" all files
-nnoremap <Leader>s <cmd>lua require'telescope.builtin'.find_files{}<CR>
-" ripgrep like grep through dir
-nnoremap <Leader>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
-" pick color scheme
-nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
+call sign_define("LspDiagnosticsSignError",{"text" : "", "texthl" : "RedSign"})
+call sign_define("LspDiagnosticsSignWarning",{"text" : "", "texthl" : "YellowSign"})
+call sign_define("LspDiagnosticsSignInformation",{"text" : "", "texthl" : "BlueSign"})
+call sign_define("LspDiagnosticsSignHint",{"text" : "", "texthl" : "AquaSign"})
 
-" Split resizing
-nnoremap <C-Left> <cmd>vertical resize +3<CR>
-nnoremap <C-Right> <cmd>vertical resize -3<CR>
-nnoremap <C-Up> <cmd>resize +3<CR>
-nnoremap <C-Down> <cmd>resize -3<CR>
-inoremap <C-Left> <cmd>vertical resize +3<CR>
-inoremap <C-Right> <cmd>vertical resize -3<CR>
-inoremap <C-Up> <cmd>resize +3<CR>
-inoremap <C-Down> <cmd>resize -3<CR>
+" >> Telescope bindings
+nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{ hidden =true }<CR>
+nnoremap <Leader>tj <cmd>lua require'telescope.builtin'.builtin{}<CR>
+nnoremap <Leader>fo <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+nnoremap <Leader>fb <cmd>lua require'telescope.builtin'.buffers{}<CR>
+nnoremap <Leader>fcb <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+nnoremap <Leader>fm <cmd>lua require'telescope.builtin'.marks{}<CR>
+nnoremap <Leader>fg <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <Leader>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+nnoremap <Leader>fc <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
+nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
+nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
 
 lua << EOF
 require("shub")
@@ -334,64 +332,8 @@ EOF
 " enable treesitter
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
-" --------------------------------------------------------------------------------
-" configure editor with tabs and nice stuff...
-" --------------------------------------------------------------------------------
-""filetype indent plugin on
-""set expandtab           " enter spaces when tab is pressed
-""set smartindent
-""set modeline
-""set textwidth=80       " break lines when line length increases
-""set tabstop=4           " use 4 spaces to represent tab
-""set softtabstop=4
-""set shiftwidth=4        " number of spaces to use for auto indent
-""set autoindent          " copy indent from current line when starting a new line
-""" make backspaces more powerfull
-""set backspace=indent,eol,start
-""" Tab settings for various files
-""augroup TabSettings
-""  autocmd!
-""  autocmd FileType python setl ai ts=8 et sw=4 sts=4
-""  autocmd FileType make         set sw=4 ts=4 noet
-""  autocmd BufRead,BufNewFile *.conf,*.cfg setlocal filetype=config
-""  autocmd FileType config       setlocal commentstring=#\ %s
-""  autocmd FileType toml         setlocal commentstring=#\ %s
-""  autocmd FileType terraform    setlocal commentstring=#\ %
-""  ""autocmd FileType python       set ai et sw=4 ts=4 sts=4
-""augroup END
-
-" ==== Buffers ====
-""set showtabline=1                     " show tabs only when 2 or more open
-""""set noswapfile                        " Dont' use swapfile
-""set shiftwidth=4                      " shift lines by 4 spaces
-""set tabstop=4                         " 4 whitespaces for tabs visual presentation
-""set smarttab                          " set tabs for a shifttabs logic
-""set expandtab                         " expand tabs into spaces
-""""set smartindent
-""set shiftround                        " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
-""
-""" make backspaces more powerfull
-""set backspace=indent,eol,start
-
-""augroup TabSettings
-""  autocmd!
-""  " vim-commentary help
-""  autocmd BufRead,BufNewFile *.conf,*.cfg setlocal filetype=config
-""  autocmd FileType config       setlocal commentstring=#\ %s
-""  autocmd FileType toml         setlocal commentstring=#\ %s
-""  autocmd FileType terraform    setlocal commentstring=#\ %s
-""
-""  autocmd FileType python       setlocal ai et sw=4 ts=4 sts=4
-""  autocmd FileType make         setlocal sw=4 ts=4 noet
-""  autocmd FileType jinja        setlocal sw=0
-""  autocmd FileType go           setlocal sw=8 ts=8 noet
-""augroup END
-
-"" Python
-""au BufNewFile,BufRead *.py set colorcolumn=79
-""au BufNewFile,BufRead *.py set shiftwidth=4
-""au BufNewFile,BufRead *.py set softtabstop=4
-""au BufNewFile,BufRead *.py set tabstop=4
-""" au BufNewFile,BufRead *.py setlocal foldmethod=indent
-""au BufNewFile,BufRead *.py vmap <CR> :s/\(^\s*\)/\1# /<CR>:let @/ = ""<CR>
-""au BufNewFile,BufRead *.py vmap <S-CR> :s/\(^\s*\)# /\1/<CR>:let @/ = ""<CR>
+" ==== utlisnips ==== Trigger configuration.
+""let g:UltiSnipsExpandTrigger='<C-s>' let g:UltiSnipsJumpForwardTrigger='Tab>'
+""let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
+""" If you want :UltiSnipsEdit to split your window.
+""let g:UltiSnipsEditSplit="vertical"

@@ -4,9 +4,14 @@ local function on_attach()
 	-- dont know wat this does xD
 end
 
+-- Servers setup
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- install: npm i -g pyright
 require'lspconfig'.pyright.setup {
 	on_attach = on_attach,
+	capabilities = capabilities,
 	root_dir = function() return vim.loop.cwd() end,
 	capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
@@ -14,15 +19,12 @@ require'lspconfig'.pyright.setup {
 require'lspconfig'.tsserver.setup{ on_attach=on_attach }
 require'lspconfig'.html.setup{ on_attach=on_attach }
 
-
--- Set Default Prefix.
--- Note: You can set a prefix per lsp server in the lv-globals.lua file
+-- Set Default Prefix.Note: You can set a prefix per lsp server in the lv-globals.lua file
+-- inline diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = {
-      prefix = "",
-      spacing = 10,
-    },
+    -- virtual_text = { prefix = "", spacing = 10},
+    virtual_text = false, -- disable inline diagnostics
     signs = true,
     underline = true,
   }
@@ -40,7 +42,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 -- symbols for autocomplete
 vim.lsp.protocol.CompletionItemKind = {
-    "   (Text) ",
+    "   (Text) ", -- example
     "   (Method)",
     "   (Function)",
     "   (Constructor)",
@@ -111,3 +113,38 @@ require'lspinstall'.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
+
+-- open goto definitions in a split window
+--local function goto_definition(split_cmd)
+--  local util = vim.lsp.util
+--  local log = require("vim.lsp.log")
+--  local api = vim.api
+--
+--  -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
+--  local handler = function(_, method, result)
+--    if result == nil or vim.tbl_isempty(result) then
+--      local _ = log.info() and log.info(method, "No location found")
+--      return nil
+--    end
+--
+--    if split_cmd then
+--      vim.cmd(split_cmd)
+--    end
+--
+--    if vim.tbl_islist(result) then
+--      util.jump_to_location(result[1])
+--
+--      if #result > 1 then
+--        util.set_qflist(util.locations_to_items(result))
+--        api.nvim_command("copen")
+--        api.nvim_command("wincmd p")
+--      end
+--    else
+--      util.jump_to_location(result)
+--    end
+--  end
+--
+--  return handler
+--end
+
+--vim.lsp.handlers["textDocument/definition"] = goto_definition('vsplit')

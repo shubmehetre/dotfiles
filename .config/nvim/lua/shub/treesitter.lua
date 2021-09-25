@@ -6,8 +6,9 @@ require'nvim-treesitter.configs'.setup {
       enable = true, -- you can also use a table with list of langs here (e.g. { "python", "javascript" })
     },
 
+    -- indent = { enable = true, disable = { 'blade' , 'vue' } }, -- this broke my python indents. took my hours to fu*kin figure this out.
     indent = {
-      enable = true
+      enable = false						-- just dont let treesitter handle this. its not ready for some languages
     },
 
     incremental_selection = {
