@@ -37,6 +37,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 ""Plug 'hrsh7th/cmp-vsnip'
 ""Plug 'hrsh7th/vim-vsnip'
 " ui
@@ -333,7 +336,9 @@ EOF
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 " ==== utlisnips ==== Trigger configuration.
-""let g:UltiSnipsExpandTrigger='<C-s>' let g:UltiSnipsJumpForwardTrigger='Tab>'
-""let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
-""" If you want :UltiSnipsEdit to split your window.
-""let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger='<C-s>'
+let g:UltiSnipsJumpForwardTrigger='Tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
+let g:UltiSnipsRemoveSelectModeMappings = 0
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"

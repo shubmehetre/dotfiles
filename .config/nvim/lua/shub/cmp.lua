@@ -4,10 +4,14 @@ local cmp = require'cmp'
 require "cmp_nvim_lsp"
 require "cmp_buffer"
 require "cmp_path"
--- require "cmp_nvim_ultisnips"
+require "cmp_nvim_ultisnips"
 -- require "cmp_nvim_lua"
 -- require "cmp_calc"
 -- require "cmp_emoji"
+
+local t = function(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
 -- Setup tabnine
 -- local tabnine = require('cmp_tabnine.config')
@@ -56,19 +60,79 @@ cmp.setup({
     end,
   },
   mapping = {
-	['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-	['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert , select = false }),
-	['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    	['<C-f>'] = cmp.mapping.scroll_docs(4),
-    	['<C-Space>'] = cmp.mapping.complete(),
-    	['<C-e>'] = cmp.mapping.close()
+  		['<C-p>'] = cmp.mapping.select_prev_item(),
+		['<C-n>'] = cmp.mapping.select_next_item(),
+		['<S-Tab>'] = cmp.mapping(function(fallback)
+			if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+				vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpBackwards()<CR>"))
+			elseif vim.fn.pumvisible() == 1 then
+				vim.fn.feedkeys(t("<C-p>"), "n")
+			--[[ elseif check_back_space() then
+				vim.fn.feedkeys(t("<S-tab>"), "n") ]]
+			else
+				vim.fn.feedkeys(t("<S-tab>"), "n")
+			end
+		end, { "i", "s"}),
+		['<Tab>'] = cmp.mapping(function(fallback)
+			if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+				vim.fn.feedkeys(t("<esc>:call UltiSnips#JumpForwards()<CR>"))
+				--[[ if vim.fn.mode() == 's' then
+					vim.fn.feedkeys(t("<esc>:call UltiSnips#JumpForwards()<CR>"))
+				elseif vim.fn.mode() == 'i' then
+					vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpForwards()<CR>")) ]]
+				-- end
+			elseif vim.fn.pumvisible() == 1 then
+				vim.fn.feedkeys(t("<C-n>"), "n")
+			--[[ elseif check_back_space() then
+				vim.fn.feedkeys(t("<tab>"), "n") ]]
+			else
+				vim.fn.feedkeys(t("<tab>"), "n")
+			end
+		end, { "i", "s"}),
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-e>'] = cmp.mapping.close(),
+		['<CR>'] = cmp.mapping.confirm({ -- remapped at bottom by autopairs
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = false,
+		}),
+		-- ['<C-Space>'] = cmp.mapping.complete(),
+		['<C-Space>'] = cmp.mapping(function(fallback)
+			-- print(vim.inspect(vim.fn.complete_info()))
+			if vim.fn.pumvisible() == 1 then
+				if vim.fn.complete_info()["selected"] ~= -1 then
+					if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
+						return vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
+					else
+						vim.fn.feedkeys(t("<cr>"), "n")
+          end
+				else
+					vim.fn.feedkeys(t("<C-e>"), "n")
+				end
+			--[[ elseif check_back_space() then
+				vim.fn.feedkeys(t("<cr>"), "n") ]]
+			else
+				cmp.complete()  -- invoke popup
+				-- fallback()
+			end
+		end, { "i", "s", }),
+
+
+
+	  -- old
+	--['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+	--['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert , select = false }),
+    	--['<C-Space>'] = cmp.mapping.complete(),
+	--['<C-d>'] = cmp.mapping.scroll_docs(-4),
+	--['<C-f>'] = cmp.mapping.scroll_docs(4),
+    	--['<C-e>'] = cmp.mapping.close()
   },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
-    -- { name = 'ultisnips' }
-    { name = 'vsnip'},
+    { name = 'ultisnips' }
+    -- { name = 'vsnip'},
     -- { name = 'cmp_tabnine' },
   },
   completion = {
@@ -86,7 +150,7 @@ cmp.setup({
         buffer = "[Buffer]",
         path = "[Path]",
         nvim_lsp = "[LSP]",
-	-- ultisnips = "[UltiSnips]",
+	ultisnips = "[UltiSnips]",
         -- nvim_lua = "[Lua]",
         -- calc = "[Calc]",
         -- emoji = "[Emoji]",
