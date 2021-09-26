@@ -55,9 +55,11 @@ call plug#end()
 let g:gruvbox_italic=1
 colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
-""let g:gruvbox_contrast_dark = 'hard' " set darker bg
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_termcolors
 ""let g:gruvbox_invert_selection='0'
 
+""set darker bg
 set title
 set bg=dark
 set go=a
@@ -69,6 +71,9 @@ set noruler
 set laststatus=0
 set noshowcmd
 set shortmess+=A
+
+" open file in browser
+nnoremap <leader>w :exe ':silent !brave %'<CR>
 
 " highlighting stuff (for more groups=> :hi) :
 	" set hlsearch
@@ -177,6 +182,12 @@ inoremap <C-Down> <cmd>resize -3<CR>
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	" autocmd VimLeave *.tex !texclear %
 
+" Enable Goyo by default for mutt writing
+	""autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	""autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
+	""autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
+	""autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
+
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 	map <leader>v :VimwikiIndex
@@ -195,11 +206,6 @@ inoremap <C-Down> <cmd>resize -3<CR>
 	""autocmd StdinReadPre * let s:std_in=1
 	""autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
-" Enable Goyo by default for mutt writing
-	""autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	""autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
-	""autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	""autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 	autocmd BufWritePre * %s/\s\+$//e
@@ -249,7 +255,7 @@ nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
 	inoremap ( ()<Esc>i
 	inoremap { {}<Esc>i
 	inoremap [ []<Esc>i
-	inoremap < <><Esc>i
+	" inoremap < <><Esc>i
 	inoremap ' ''<Esc>i
 	inoremap " ""<Esc>i
 	inoremap {<CR> {<CR>}<Esc>O
@@ -340,5 +346,6 @@ let g:UltiSnipsExpandTrigger='<C-s>'
 let g:UltiSnipsJumpForwardTrigger='Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 let g:UltiSnipsRemoveSelectModeMappings = 0
+let g:UltiSnipsListSnippets = '<leader>us'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
