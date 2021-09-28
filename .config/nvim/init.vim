@@ -1,4 +1,4 @@
-let mapleader=";"
+let mapleader=" "
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -50,13 +50,12 @@ Plug 'gruvbox-community/gruvbox'
 " Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
-
 " colorsceme
 let g:gruvbox_italic=1
 colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_termcolors
+" let g:gruvbox_termcolors
 ""let g:gruvbox_invert_selection='0'
 
 ""set darker bg
@@ -74,6 +73,10 @@ set shortmess+=A
 
 " open file in browser
 nnoremap <leader>w :exe ':silent !brave %'<CR>
+
+" switch semi and colon ok
+""nnoremap ; :
+""nnoremap : ;
 
 " highlighting stuff (for more groups=> :hi) :
 	" set hlsearch
@@ -93,6 +96,7 @@ nnoremap <leader>w :exe ':silent !brave %'<CR>
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+
 
 " cute tricks
 	nnoremap <silent> <esc> :noh<cr><esc>
@@ -126,7 +130,7 @@ nnoremap <leader>w :exe ':silent !brave %'<CR>
 """""""""""""
 " Nerd tree "
 """""""""""""
-	map <silent> <leader>n :NERDTreeToggle<CR>
+	nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 	" autocmd VimEnter * NERDTree
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     if has('nvim')
@@ -141,6 +145,9 @@ nnoremap <leader>w :exe ':silent !brave %'<CR>
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+
+"  Control i for prev buff
+" "map <silent> <C-i> :bp<CR>
 
 " Split resizing
 nnoremap <C-Left> <cmd>vertical resize +3<CR>
@@ -190,7 +197,7 @@ inoremap <C-Down> <cmd>resize -3<CR>
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	map <leader>v :VimwikiIndex
+	" map <leader>v :VimwikiIndex
 	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
@@ -262,21 +269,20 @@ nnoremap <silent> <leader>b :call ToggleHiddenAll()<CR>
 
 " Jump to tab using leader and tab number
 " example:
- 	noremap <leader>1 1gt
- 	noremap <leader>2 2gt
- 	noremap <leader>3 3gt
- 	noremap <leader>4 4gt
- 	noremap <leader>5 5gt
- 	noremap <leader>6 6gt
- 	noremap <leader>7 7gt
- 	noremap <leader>8 8gt
- 	noremap <leader>9 9gt
- 	noremap <leader>0 :tablast<cr>
-	nnoremap <leader>t :tabnew<CR>
+ 	nnoremap <leader>1 1gt
+ 	nnoremap <leader>2 2gt
+ 	nnoremap <leader>3 3gt
+ 	nnoremap <leader>4 4gt
+ 	nnoremap <leader>5 5gt
+ 	nnoremap <leader>6 6gt
+ 	nnoremap <leader>7 7gt
+ 	nnoremap <leader>8 8gt
+ 	nnoremap <leader>9 9gt
+ 	nnoremap <leader>0 :tablast<cr>
 
 " <tab> / <s-tab> | Circular windows navigation
 nnoremap <leader>t :tabnew<CR>
-nnoremap <tab> :tabn<cr>
+" nnoremap <tab> :tabn<cr> --this breaks <C-I>
 nnoremap <S-tab> :tabp<cr>
 
 " remember the folds and prev state
@@ -292,8 +298,8 @@ augroup SaveFolds
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
-" terminal
-nmap <Leader>z :14sp +terminal<CR> i
+" terminal2
+nmap <silent> <Leader>z :14sp +terminal<CR> i
 tnoremap <Esc><Esc> <C-\><C-n>
 tnoremap <Leader>q <C-\><C-n>:q<CR>
 
@@ -303,8 +309,8 @@ nnoremap <silent>   <Leader>gr 	<cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent>   <Leader>gf  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent>   <Leader>dh 	<cmd>lua vim.lsp.buf.document_highlight()<CR>
 nnoremap <silent>   <Leader>di 	<cmd>lua vim.lsp.buf.document_implementation()<CR>
-nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev({enable_popup = false})<CR>
-nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = false})<CR>
+nnoremap <silent> 	[d 	<cmd>lua vim.lsp.diagnostic.goto_prev({enable_popup = false})<CR>
+nnoremap <silent> 	]d 	<cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = false})<CR>
 
 nnoremap <silent>   <Leader>cr    <cmd>Lspsaga rename<CR>
 nnoremap <silent>   <Leader>ch 	  <cmd>Lspsaga hover_doc<CR>
@@ -331,8 +337,6 @@ nnoremap <Leader>fm <cmd>lua require'telescope.builtin'.marks{}<CR>
 nnoremap <Leader>fg <cmd>lua require'telescope.builtin'.git_files{}<CR>
 nnoremap <Leader>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 nnoremap <Leader>fc <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
-nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
-nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
 
 lua << EOF
 require("shub")
@@ -346,6 +350,6 @@ let g:UltiSnipsExpandTrigger='<C-s>'
 let g:UltiSnipsJumpForwardTrigger='Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 let g:UltiSnipsRemoveSelectModeMappings = 0
-let g:UltiSnipsListSnippets = '<leader>us'
+" let g:UltiSnipsListSnippets = '<leader>us'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
