@@ -54,8 +54,8 @@ local kind_icons = {
 cmp.setup({
   snippet = {
     expand = function(args)
-      --- vim.fn["UltiSnips#Anon"](args.body)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
+      vim.fn["UltiSnips#Anon"](args.body)
+      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
       -- require('luasnip').lsp_expand(args.body) -- For `luasnip` user
     end,
   },

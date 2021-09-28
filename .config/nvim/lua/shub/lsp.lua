@@ -8,7 +8,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- install: npm i -g pyright
+-- TO INSTALL DO THIS: npm i -g pyright
 require'lspconfig'.pyright.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -16,8 +16,9 @@ require'lspconfig'.pyright.setup {
 	capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 
-require'lspconfig'.tsserver.setup{ on_attach=on_attach }
+-- require'lspconfig'.tsserver.setup{ on_attach=on_attach }
 require'lspconfig'.html.setup{ on_attach=on_attach }
+require'lspconfig'.bashls.setup{ on_attach=on_attach }
 
 -- Set Default Prefix.Note: You can set a prefix per lsp server in the lv-globals.lua file
 -- inline diagnostics
@@ -93,10 +94,10 @@ local lsp_config = {}
 function lsp_config.common_on_attach(client, bufnr)
     documentHighlight(client, bufnr)
 end
-function lsp_config.tsserver_on_attach(client, bufnr)
-    lsp_config.common_on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-end
+-- function lsp_config.tsserver_on_attach(client, bufnr)
+--     lsp_config.common_on_attach(client, bufnr)
+--     client.resolved_capabilities.document_formatting = false
+-- end
 
 local function setup_servers()
   require'lspinstall'.setup()
