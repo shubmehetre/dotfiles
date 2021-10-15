@@ -13,3 +13,4 @@ sc  $HOME/.local/bin
 src $HOME/.local/src
 vv  ${XDG_VIDEOS_DIR:-$HOME/Videos}
 nbd $HOME/.local/share/newsboat/nb_downloads/
+songs $HOME/zzz/songs/

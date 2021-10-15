@@ -16,6 +16,7 @@ require'lspconfig'.pyright.setup {
 	capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 
+-- html/css/json servers - https://www.npmjs.com/package/vscode-langservers-extracted
 -- require'lspconfig'.tsserver.setup{ on_attach=on_attach }
 require'lspconfig'.html.setup{ on_attach=on_attach }
 require'lspconfig'.bashls.setup{ on_attach=on_attach }
