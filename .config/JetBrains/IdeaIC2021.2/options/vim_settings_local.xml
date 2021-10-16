@@ -1,0 +1,134 @@
+<application>
+  <component name="VimHistorySettings">
+    <history>
+      <history-search>
+        <entry encoding="base64">bm9u</entry>
+        <entry encoding="base64">SGlcIHRoaXM=</entry>
+        <entry encoding="base64">Y2xhc3Mgdg==</entry>
+        <entry encoding="base64">SGkgUw==</entry>
+        <entry encoding="base64">SGk=</entry>
+        <entry encoding="base64">XDxjbGFzc1w+</entry>
+      </history-search>
+      <history-cmd>
+        <entry encoding="base64">JXMvSGlcIHRoaXMvVGhpcy9n</entry>
+      </history-cmd>
+    </history>
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <filemarks>
+      <file name="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" timestamp="1634324930667">
+        <mark key="'" line="28" column="0" />
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="2" column="0" />
+        <mark key="." line="2" column="0" />
+        <mark key="^" line="4" column="11" />
+      </file>
+      <file name="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/Main.java" timestamp="1634324861998">
+        <mark key="[" line="4" column="21" />
+        <mark key="]" line="4" column="46" />
+        <mark key="." line="4" column="45" />
+        <mark key="^" line="4" column="46" />
+      </file>
+      <file name="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/main.java" timestamp="1634323431451">
+        <mark key="[" line="2" column="13" />
+        <mark key="]" line="2" column="13" />
+        <mark key="^" line="3" column="4" />
+        <mark key="." line="2" column="14" />
+      </file>
+      <file name="$USER_HOME$/zzz/all_repos/java/test1/MarioKart/.idea/misc.xml" timestamp="1634193812857">
+        <mark key="[" line="5" column="10" />
+        <mark key="]" line="5" column="10" />
+        <mark key="." line="5" column="10" />
+        <mark key="^" line="5" column="0" />
+      </file>
+      <file name="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/PrintStream.class" timestamp="1634217045807">
+        <mark key="'" line="247" column="29" />
+      </file>
+      <file name="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/Writer.class" timestamp="1634217080327">
+        <mark key="'" line="119" column="20" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="7" column="24" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="430" column="22" filename="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/PrintStream.class" />
+      <jump line="330" column="16" filename="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/PrintStream.class" />
+      <jump line="18" column="27" filename="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/PrintStream.class" />
+      <jump line="247" column="29" filename="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/PrintStream.class" />
+      <jump line="102" column="16" filename="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/Writer.class" />
+      <jump line="119" column="20" filename="/usr/lib/jvm/java-16-openjdk!/java.base/java/io/Writer.class" />
+      <jump line="5" column="35" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="8" column="44" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="0" column="24" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="46" column="0" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="3" column="19" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="45" column="0" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="38" column="38" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="34" column="50" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="39" column="0" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+      <jump line="29" column="0" filename="$USER_HOME$/zzz/all_repos/java/basics/src/basic/java/stuff/JavaBasic.java" />
+    </jumps>
+  </component>
+  <component name="VimRegisterSettings">
+    <registers>
+      <register name="&quot;" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="+" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="-" type="4">
+        <text encoding="base64">Ig==</text>
+      </register>
+      <register name="." type="4">
+        <text encoding="base64">aW50</text>
+      </register>
+      <register name="/" type="4">
+        <text encoding="base64">XDxjbGFzc1w+</text>
+      </register>
+      <register name="0" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="1" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="2" type="2">
+        <text encoding="base64">aW1wb3J0IGphdmEubGFuZy5hbm5vdGF0aW9uLlRhcmdldDsK</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">QFRhcmdldChpbnQpCg==</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">ICAgICAgICBpbnQgc3VtID0gMDsK</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">ICAgICAgICBhc3NlcnRFcXVhbHMoKQo=</text>
+      </register>
+      <register name="7" type="2">
+        <text encoding="base64">aW1wb3J0IHN0YXRpYyBvcmcuanVuaXQuanVwaXRlci5hcGkuQXNzZXJ0aW9ucy5hc3NlcnRFcXVhbHM7Cg==</text>
+      </register>
+      <register name="8" type="2">
+        <text encoding="base64">ICAgICAgICBhc3NlcnRFcXVhbHMoKQo=</text>
+      </register>
+      <register name="9" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name=":" type="4">
+        <text encoding="base64">JXMvSGlcIHRoaXMvVGhpcy9n</text>
+      </register>
+    </registers>
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-search encoding="base64">XDxjbGFzc1w+</last-search>
+      <last-substitute encoding="base64">SGlcIHRoaXM=</last-substitute>
+      <last-replace encoding="base64">VGhpcw==</last-replace>
+      <last-pattern encoding="base64">XDxjbGFzc1w+</last-pattern>
+      <last-dir encoding="base64">MQ==</last-dir>
+      <show-last encoding="base64">ZmFsc2U=</show-last>
+    </search>
+  </component>
+</application>

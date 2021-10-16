@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# [ -z "$1" ] && pacman -Si $1 |sed -n '/Depends\ On/,/:/p' | sed '$d' | cut -d: -f2 || echo "Syntax: finddep socat"
+
+if [ -z "$1" ]
+then
+	echo "Syntax: finddep socat"
+else
+	pacman -Si $1 |sed -n '/Depends\ On/,/:/p' | sed '$d' | cut -d: -f2 | xargs
+fi

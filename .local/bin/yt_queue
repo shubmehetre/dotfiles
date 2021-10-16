@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# useless script just use youtube-dl -a option
+
+# paste all url in quickie file and reset the absolue path below
+
+quickie_list="/home/doom/zzz/songs/list_for_quickie"
+
+skiphash=$(grep -v '^#' $quickie_list)
+
+echo $skiphash | while IFS= read -r line
+do
+	youtube-dl --add-metadata -i -x -f bestaudio/best $line
+done
