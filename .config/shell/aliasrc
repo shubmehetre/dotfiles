@@ -76,3 +76,6 @@ alias ec2="ssh -i aws_ec2.pem ubuntu@ec2-65-1-114-228.ap-south-1.compute.amazona
 alias hood="mpv --shuffle /home/doom/zzz/songs/playlists/The_Hood/"
 alias home="mpv --shuffle /home/doom/zzz/songs/playlists/Home/"
 alias gully="mpv --shuffle /home/doom/zzz/songs/playlists/Bandana_GAnG/"
+
+# xclip: always get contents in clipboard
+alias xclip="xclip -selection clipboard"
