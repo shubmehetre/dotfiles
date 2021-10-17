@@ -1,23 +1,14 @@
 <project version="4">
+  <component name="FavoritesManager">
+    <favorites_list name="JavaBasic" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/basic/java/stuff/JavaBasic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/basic/java/stuff/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="e#52#96#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="440">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -27,6 +18,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>This is a</find>
+      <find>int</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -34,6 +26,7 @@
       <option value="$PROJECT_DIR$/src/basic/java/stuff/main.java" />
       <option value="$PROJECT_DIR$/src/basic/java/stuff/Main.java" />
       <option value="$PROJECT_DIR$/src/basic/java/stuff/JavaBasic.java" />
+      <option value="$PROJECT_DIR$/src/basic/java/stuff/JavaBasicTest.java" />
     </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
@@ -46,6 +39,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -68,25 +62,25 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.25" />
       <window_info id="Commit" order="3" />
       <window_info id="Learn" order="4" />
       <window_info id="Pull Requests" order="5" />
       <window_info id="Space Code Reviews" order="6" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3303232" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.2951521" />
       <window_info anchor="bottom" id="TODO" order="4" />
-      <window_info anchor="bottom" id="Problems View" order="5" visible="true" weight="0.3303232" />
+      <window_info anchor="bottom" id="Problems View" order="5" weight="0.3303232" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
@@ -94,12 +88,14 @@
       <window_info anchor="bottom" id="Build" order="10" weight="0.3303232" />
       <window_info anchor="right" id="Space Automation" order="0" />
       <window_info anchor="right" id="Hierarchy" order="1" weight="0.32993728" />
-      <window_info anchor="right" id="Layout Validation" order="7" />
+      <window_info anchor="right" id="Layout Validation" order="2" />
     </layout>
     <recentWindows>
+      <value>Find</value>
+      <value>Project</value>
+      <value>Favorites</value>
       <value>Problems View</value>
       <value>Run</value>
-      <value>Project</value>
       <value>Hierarchy</value>
     </recentWindows>
   </component>
@@ -125,22 +121,34 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1893" height="282" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1634324948751" />
-    <state x="787" y="145" key="SettingsEditor" timestamp="1634323323444">
+    <state x="787" y="145" key="SettingsEditor" timestamp="1634412187868">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="787" y="145" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1634323323444" />
+    <state x="787" y="145" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1634412187868" />
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup" timestamp="1634228801704">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1920.1080@0.0.1920.1080" timestamp="1634228801704" />
-    <state x="685" y="458" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1634324007575">
+    <state x="675" y="274" width="561" height="524" key="StructurePopup" timestamp="1634408423481">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="685" y="458" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1634324007575" />
+    <state x="675" y="274" width="561" height="524" key="StructurePopup/0.0.1920.1080@0.0.1920.1080" timestamp="1634408423481" />
+    <state x="685" y="458" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1634411393742">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="685" y="458" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1634411393742" />
     <state x="576" y="254" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1634323386282">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="576" y="254" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1634323386282" />
+    <state x="736" y="357" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1634411328240">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="736" y="357" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1634411328240" />
+    <state width="600" height="400" key="javadoc.popup" timestamp="1634412222495">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="600" height="400" key="javadoc.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1634412222495" />
     <state x="621" y="258" width="672" height="684" key="run.anything.popup" timestamp="1634219442543">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -160,20 +168,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/io/PrintStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="426" column="16" selection-start-line="426" selection-start-column="16" selection-end-line="426" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/lang/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/basic/java/stuff/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#52#96#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/basic/java/stuff/JavaBasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/basic/java/stuff/JavaBasic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="440">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>

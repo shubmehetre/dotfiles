@@ -4,28 +4,34 @@
       <i c="1" l="1634191731460" />
     </e>
     <e n="$SelectAll">
-      <i c="6" l="1634228753713" />
+      <i c="7" l="1634410993805" />
     </e>
     <e n="$Undo">
-      <i c="1" l="1634324083250" />
+      <i c="5" l="1634404383080" />
     </e>
     <e n="AutoIndentLines">
       <i c="7" l="1634323396931" />
     </e>
     <e n="Back">
-      <i c="1" l="1634219021034" />
+      <i c="6" l="1634410949307" />
+    </e>
+    <e n="CloseActiveTab">
+      <i c="10" l="1634412258821" />
+    </e>
+    <e n="CloseContent">
+      <i c="1" l="1634412129519" />
     </e>
     <e n="EditCustomVmOptions">
       <i c="1" l="1634192788237" />
     </e>
     <e n="EditorBackSpace">
-      <i c="344" l="1634324917120" />
+      <i c="376" l="1634411115169" />
     </e>
     <e n="EditorChooseLookupItem">
       <i c="18" l="1634324910330" />
     </e>
     <e n="EditorChooseLookupItemReplace">
-      <i c="23" l="1634324847991" />
+      <i c="24" l="1634408434063" />
     </e>
     <e n="EditorDelete">
       <i c="4" l="1634218931730" />
@@ -40,31 +46,58 @@
       <i c="56" l="1634324874766" />
     </e>
     <e n="EditorEscape">
-      <i c="4" l="1634324862133" />
+      <i c="12" l="1634411291650" />
     </e>
     <e n="EditorLookupDown">
       <i c="1" l="1634324814057" />
     </e>
+    <e n="EditorStartNewLineBefore">
+      <i c="1" l="1634411346359" />
+    </e>
     <e n="EditorTab">
       <i c="6" l="1634323387497" />
+    </e>
+    <e n="EditorUnSelectWord">
+      <i c="1" l="1634411547650" />
     </e>
     <e n="EditorUp">
       <i c="17" l="1634324909142" />
     </e>
     <e n="Exit">
-      <i c="1" l="1634193025695" />
+      <i c="2" l="1634404296957" />
     </e>
     <e n="ExpandRegion">
       <i c="1" l="1634216339089" />
     </e>
+    <e n="FileStructurePopup">
+      <i c="5" l="1634408407378" />
+    </e>
     <e n="FindPrevious">
       <i c="14" l="1634219289791" />
+    </e>
+    <e n="FindUsages">
+      <i c="10" l="1634412254004" />
+    </e>
+    <e n="Forward">
+      <i c="1" l="1634405353020" />
     </e>
     <e n="GotoAction">
       <i c="4" l="1634228807947" />
     </e>
     <e n="GotoDeclaration">
-      <i c="7" l="1634217080328" />
+      <i c="9" l="1634405391855" />
+    </e>
+    <e n="GotoImplementation">
+      <i c="1" l="1634405358329" />
+    </e>
+    <e n="GotoSuperMethod">
+      <i c="2" l="1634405374006" />
+    </e>
+    <e n="GotoTest">
+      <i c="1" l="1634411310349" />
+    </e>
+    <e n="HighlightUsagesInFile">
+      <i c="4" l="1634411294897" />
     </e>
     <e n="MethodHierarchy">
       <i c="4" l="1634219189699" />
@@ -84,6 +117,12 @@
     <e n="QuickJavaDoc">
       <i c="6" l="1634217902320" />
     </e>
+    <e n="QuickPreview">
+      <i c="3" l="1634412218810" />
+    </e>
+    <e n="RenameElement">
+      <i c="4" l="1634410657751" />
+    </e>
     <e n="Run">
       <i c="22" l="1634323472666" />
     </e>
@@ -93,6 +132,9 @@
     <e n="RunClass">
       <i c="2" l="1634323462279" />
     </e>
+    <e n="SelectVirtualTemplateElement">
+      <i c="1" l="1634410633893" />
+    </e>
     <e n="ShowBookmarks">
       <i c="2" l="1634217518700" />
     </e>
@@ -100,10 +142,10 @@
       <i c="20" l="1634324777650" />
     </e>
     <e n="ShowSettings">
-      <i c="12" l="1634320774135" />
+      <i c="18" l="1634412146957" />
     </e>
     <e n="Switcher">
-      <i c="7" l="1634324870283" />
+      <i c="15" l="1634411404701" />
     </e>
     <e n="Tree-scrollUpChangeSelection">
       <i c="1" l="1634193831195" />
@@ -166,16 +208,31 @@
       <i c="3" l="1634216227888" />
     </e>
     <e n="com.intellij.openapi.actionSystem.EmptyAction$MyDelegatingAction">
-      <i c="516" l="1634324924882" />
+      <i c="587" l="1634412247139" />
     </e>
     <e n="com.intellij.openapi.editor.impl.EditorMarkupModelImpl$StatusAction">
       <i c="1" l="1634217920829" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
-      <i c="5" l="1634193818441" />
+      <i c="8" l="1634412129460" />
     </e>
     <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$AddKeyboardShortcutAction">
-      <i c="2" l="1634192559424" />
+      <i c="3" l="1634411068555" />
+    </e>
+    <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$AddMouseShortcutAction">
+      <i c="4" l="1634412163264" />
+    </e>
+    <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$ClearFilteringAction">
+      <i c="1" l="1634412181435" />
+    </e>
+    <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$EditShortcutAction">
+      <i c="1" l="1634411035463" />
+    </e>
+    <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$FindByShortcutAction">
+      <i c="7" l="1634412182264" />
+    </e>
+    <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$RemoveShortcutAction">
+      <i c="1" l="1634411063140" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
       <i c="34" l="1634228817891" />
@@ -186,6 +243,12 @@
     <e n="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
       <i c="3" l="1634219192291" />
     </e>
+    <e n="com.intellij.openapi.wm.impl.ToolWindowHeader$ShowOptionsAction">
+      <i c="2" l="1634410974748" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.ToolWindowImpl$createPopupGroup$1">
+      <i c="2" l="1634410975662" />
+    </e>
     <e n="com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetsActionGroup$ToggleWidgetAction">
       <i c="2" l="1634320665645" />
     </e>
@@ -195,14 +258,17 @@
     <e n="com.intellij.ui.SearchTextField$FindAction">
       <i c="1" l="1634320784303" />
     </e>
+    <e n="com.intellij.usages.impl.UsageFilteringRuleProviderImpl$ShowWriteAccessUsagesAction">
+      <i c="115" l="1634412229375" />
+    </e>
     <e n="com.maddyhome.idea.vim.group.NotificationService$notifyAboutShortcutConflict$1">
-      <i c="1" l="1634219344911" />
+      <i c="2" l="1634411488546" />
     </e>
     <e n="com.maddyhome.idea.vim.group.NotificationService$notifyAboutShortcutConflict$2">
       <i c="2" l="1634216423497" />
     </e>
     <e n="com.maddyhome.idea.vim.ui.ex.ExShortcutKeyAction">
-      <i c="10" l="1634218747501" />
+      <i c="23" l="1634405453646" />
     </e>
   </component>
 </application>

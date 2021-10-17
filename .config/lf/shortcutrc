@@ -1,6 +1,6 @@
 map Ccac cd "/home/doom/.cache" 
 map Ccf cd "/home/doom/.config" 
-map CD cd "/home/doom/Downloads" 
+map CD cd "/home/doom/zzz/Downloads" 
 map Cd cd "/home/doom/Documents" 
 map Cdt cd "/home/doom/.local/share" 
 map Crr cd "/home/doom/.local/share" 

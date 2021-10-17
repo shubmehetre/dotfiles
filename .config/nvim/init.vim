@@ -100,8 +100,8 @@ nnoremap <leader>w :exe ':silent !brave %'<CR>
 
 " cute tricks
 	nnoremap <silent> <esc> :noh<cr><esc>
-	nnoremap Y y$					" works like D and C
-	nnoremap n nzzzv				" keeps centre for searches
+	nnoremap Y y$
+	nnoremap n nzzzv
 	nnoremap N Nzzzv
 	inoremap , ,<c-g>u
 	inoremap . .<c-g>u
@@ -110,6 +110,8 @@ nnoremap <leader>w :exe ':silent !brave %'<CR>
 	inoremap [ [<c-g>u
 	inoremap ] ]<c-g>u
 	inoremap ? ?<c-g>u
+	vnoremap H ^
+	vnoremap L $
 	vnoremap J :m '>+1<CR>gv=gv
 	vnoremap K :m '<-2<CR>gv=gv
 

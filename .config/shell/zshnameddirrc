@@ -1,6 +1,6 @@
 hash -d cac=/home/doom/.cache 
 hash -d cf=/home/doom/.config 
-hash -d D=/home/doom/Downloads 
+hash -d D=/home/doom/zzz/Downloads 
 hash -d d=/home/doom/Documents 
 hash -d dt=/home/doom/.local/share 
 hash -d rr=/home/doom/.local/share 

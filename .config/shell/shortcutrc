@@ -1,7 +1,7 @@
 # vim: filetype=sh
 alias cac="cd /home/doom/.cache && ls -a" \
 cf="cd /home/doom/.config && ls -a" \
-D="cd /home/doom/Downloads && ls -a" \
+D="cd /home/doom/zzz/Downloads && ls -a" \
 d="cd /home/doom/Documents && ls -a" \
 dt="cd /home/doom/.local/share && ls -a" \
 rr="cd /home/doom/.local/share && ls -a" \

@@ -1,0 +1,86 @@
+let mapleader=" "
+
+set hlsearch
+set scrolloff=3
+set ignorecase smartcase
+set showmode
+set history=1000
+
+" easy window navigation
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+
+" tabs
+nnoremap <c-tab> gt
+nnoremap <c-s-tab> gT
+
+" vim built-in forward/backward navigation
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+
+" cute tricks
+	nnoremap <silent> <esc> :noh<cr><esc>
+	nnoremap Y y$
+	nnoremap n nzzzv
+	nnoremap N Nzzzv
+	inoremap , ,<c-g>u
+	inoremap . .<c-g>u
+	inoremap { {<c-g>u
+	inoremap } }<c-g>u
+	inoremap [ [<c-g>u
+	inoremap ] ]<c-g>u
+	inoremap ? ?<c-g>u
+	vnoremap J :m '>+1<CR>gv=gv
+	vnoremap K :m '<-2<CR>gv=gv
+
+" code stuff
+nnoremap <leader>cr :action RenameElement<cr>
+nnoremap <leader>cs <ESC>:action FileStructurePopup<CR>
+nnoremap <leader>cu :action FindUsages<CR>
+
+" misc
+nnoremap <leader>pm :action EditorPopupMenu<CR>
+nnoremap <leader>rq :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>gm :action Git.Menu<CR>
+nnoremap <leader>fp :action FindInPath<CR>
+nnoremap <leader>k :action HighlightUsagesInFile<cr>
+
+" code navigation
+nnoremap <leader>ga :action GotoAction<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gs :action GotoSuperMethod<CR>
+
+" idea actions
+nnoremap <leader>l :action ShowIntentionActions<CR>
+
+" run n debug
+nnoremap \r :action RunClass<cr>
+nnoremap \R :action Run<cr>
+nnoremap \d :action DebugClass<cr>
+nnoremap \D :action Debug<cr>
+nnoremap \c :action CheckStyleCurrentFileAction<cr>
+nnoremap \t :action ToggleLineBreakpoint<CR>
+
+" translation
+nnoremap <leader>t :action $EditorTranslateAction<CR>
+
+""""""""""""""""""""""""""TESTING PURPOSE""""""""""""""""""""""""""
+" project actions"
+nnoremap <leader>v :action SelectInProjectView<CR>
+nnoremap <leader>w :action HideAllWindows<CR>
+" windows actions
+nnoremap <leader>e :action Switcher<CR>
+
+nnoremap <leader>bn :action NextProjectWindow<CR>
+nnoremap <leader>bp :action PreviousProjectWindow<CR>
+nnoremap <leader>b; :action OpenProjectWindows<CR>
+" comment
+nnoremap <c-/> :action CommentByLineComment<CR>
+vnoremap <c-/> :action CommentByBlockComment<CR>
+" javadoc
+nnoremap qi :action QuickImplementations<CR>
