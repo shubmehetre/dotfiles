@@ -62,31 +62,20 @@ cmp.setup({
   mapping = {
   		['<C-p>'] = cmp.mapping.select_prev_item(),
 		['<C-n>'] = cmp.mapping.select_next_item(),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
-			if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-				vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpBackwards()<CR>"))
-			elseif vim.fn.pumvisible() == 1 then
-				vim.fn.feedkeys(t("<C-p>"), "n")
-			--[[ elseif check_back_space() then
-				vim.fn.feedkeys(t("<S-tab>"), "n") ]]
-			else
-				vim.fn.feedkeys(t("<S-tab>"), "n")
-			end
-		end, { "i", "s"}),
 		['<Tab>'] = cmp.mapping(function(fallback)
 			if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
 				vim.fn.feedkeys(t("<esc>:call UltiSnips#JumpForwards()<CR>"))
-				--[[ if vim.fn.mode() == 's' then
-					vim.fn.feedkeys(t("<esc>:call UltiSnips#JumpForwards()<CR>"))
-				elseif vim.fn.mode() == 'i' then
-					vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpForwards()<CR>")) ]]
-				-- end
-			elseif vim.fn.pumvisible() == 1 then
-				vim.fn.feedkeys(t("<C-n>"), "n")
-			--[[ elseif check_back_space() then
-				vim.fn.feedkeys(t("<tab>"), "n") ]]
+			elseif cmp.visible() then
+				cmp.select_next_item()
 			else
-				vim.fn.feedkeys(t("<tab>"), "n")
+				fallback()
+			end
+		end, { "i", "s"}),
+		['<S-Tab>'] = cmp.mapping(function(fallback)
+			if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+				vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpBackwards()<CR>"))
+			elseif cmp.visible() then
+				cmp.select_prev_item()
 			end
 		end, { "i", "s"}),
 		['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -128,8 +117,8 @@ cmp.setup({
     	--['<C-e>'] = cmp.mapping.close()
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
+    { name = 'nvim_lsp' , keyword_length = 5},
+    { name = 'buffer', keyword_length = 5 },
     { name = 'path' },
     { name = 'ultisnips' }
     -- { name = 'vsnip'},

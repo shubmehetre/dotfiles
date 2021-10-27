@@ -1,4 +1,5 @@
 #!/bin/env bash
+# Author: Shubham A. Mehetre
 
 # Get the model name for your HDD, and replace it here below
 GETPARTITION=$( lsblk -o KNAME,MODEL | rg -w 'ST1000LM024' | awk '{ print $1 }' )
@@ -28,5 +29,7 @@ else
 		/ /mnt/doom_backup
 
 	# media and other stuff folder
-	sudo rsync -aAX /home/*/zzz/ /mnt/zzz
+	sudo rsync -aAX --delete \
+		--exclude="/home/doom/zzz/mom_laptop" \
+		/home/*/zzz/ /mnt/zzz
 fi
