@@ -30,6 +30,6 @@ else
 
 	# media and other stuff folder
 	sudo rsync -aAX --delete \
-		--exclude="/home/doom/zzz/mom_laptop" \
+		--exclude="/home/*/zzz/mom_laptop" \
 		/home/*/zzz/ /mnt/zzz
 fi

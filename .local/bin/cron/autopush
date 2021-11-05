@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+repo_dir="$HOME/zzz/all_repos/codes/"
+
+for i in $( find $repo_dir -type d -maxdepth 1 2>/dev/null ); do
+	git -C $i add .
+	git -C $i commit -m "auto push"
+	git -C $i origin master
+	git -C $i push origin master
+done
