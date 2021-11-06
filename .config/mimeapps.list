@@ -18,3 +18,5 @@ x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_home_doom_zzz_sof
 [Added Associations]
 application/pdf=libreoffice-draw.desktop;
 application/vnd.ms-htmlhelp=org.pwmt.zathura-pdf-mupdf.desktop;
+image/jpeg=sxiv.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=brave-browser.desktop;libreoffice-writer.desktop;
