@@ -60,7 +60,7 @@ alias \
 	remaps="source $HOME/.config/bin/remaps"
 
 # Joplin appimg
-alias jop="$HOME/.local/bin/joplin/Joplin.AppImage"
+alias joplin="$HOME/.local/bin/joplin/Joplin.AppImage"
 
 # mount sdb1
 alias cold="mount /dev/sdb1 $HOME/cold_storage/"
@@ -81,5 +81,18 @@ alias focus="mpv --shuffle /home/doom/zzz/songs/focus/"
 # xclip: always get contents in clipboard
 alias xclip="xclip -selection clipboard"
 
-# webserver
+# webserver : racknerd.com
 alias rack="ssh root@23.234.228.169"
+
+# fzf
+
+ffc() { du -a $HOME/.config $HOME/.local/bin \
+	--exclude '.config/libreoffice' \
+	--exclude '.config/BraveSoftware' \
+	--exclude '.config/@joplin' \
+	--exclude '.config/nvim/plugged' \
+	--exclude '.config/JetBrains' \
+	--exclude '.config/joplin-desktop' \
+	| awk '{print $2}' | fzf | xargs -r $EDITOR ; }
+
+ff() { fzf | xargs -r -I {} $EDITOR {} ; }
