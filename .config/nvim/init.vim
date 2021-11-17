@@ -4,7 +4,7 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	echo "Downloading junegunn/vim-plug to manage plugins..."
 	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
 	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
+	""autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
@@ -14,7 +14,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'gioele/vim-autoswap'
@@ -43,7 +42,6 @@ Plug 'SirVer/ultisnips'
 ""Plug 'hrsh7th/cmp-vsnip'
 ""Plug 'hrsh7th/vim-vsnip'
 " ui
-Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'gruvbox-community/gruvbox'
 " Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
 " If you want to display icons, then use one of these plugins:
@@ -53,8 +51,11 @@ call plug#end()
 " colorsceme
 let g:gruvbox_italic=1
 colorscheme gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'medium'
+
+""autocmd vimenter * ++nested colorscheme gruvbox
+""autocmd vimenter * colorscheme gruvbox
+""let g:gruvbox_contrast_dark = 'medium'
+
 " let g:gruvbox_termcolors
 ""let g:gruvbox_invert_selection='0'
 
@@ -201,9 +202,9 @@ inoremap <C-Down> <cmd>resize -3<CR>
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 	" map <leader>v :VimwikiIndex
 	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
+	""autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+	""autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+	""autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " Save and Save-as
 	map <C-s> :w<CR>

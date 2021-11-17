@@ -20,3 +20,4 @@ application/pdf=libreoffice-draw.desktop;
 application/vnd.ms-htmlhelp=org.pwmt.zathura-pdf-mupdf.desktop;
 image/jpeg=sxiv.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=brave-browser.desktop;libreoffice-writer.desktop;
+video/mp4=brave-browser.desktop;
