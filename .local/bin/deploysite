@@ -1,0 +1,15 @@
+# By: Shubham A. Mehetre <shub@smehetre.xyz>
+#!/bin/bash
+# Date : 07-11-21
+# License: GNU GPLv3
+# Desc: Autodeploy site.
+
+sitedir="$HOME/zzz/all_repos/my_site/"
+maincss="$HOME/zzz/all_repos/my_site/style.css"
+blogcss="$HOME/zzz/all_repos/my_site/blog/style.css"
+
+
+# sync css in blogs. (try to fix this soon)
+rsync $maincss $blogcss
+
+rsync -urvP $sitedir root@23.234.228.169:/var/www/smehetre

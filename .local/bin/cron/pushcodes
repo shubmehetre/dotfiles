@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+repodir="$HOME/zzz/all_repos/codes/"
+
+git -C $repodir add .
+git -C $repodir commit -m "auto push"
+git -C $repodir pull origin master
+git -C $repodir push origin master
