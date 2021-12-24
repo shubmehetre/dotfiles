@@ -10,5 +10,5 @@ skiphash=$(grep -v '^#' $quickie_list)
 
 echo $skiphash | while IFS= read -r line
 do
-	youtube-dl --add-metadata -i -x -f bestaudio/best $line
+	youtube-dl --add-metadata -i $line
 done

@@ -16,6 +16,7 @@ else
 		--exclude="/proc/*" \
 		--exclude="/sys/*" \
 		--exclude="/tmp/*" \
+		--exclude="/var/cache" \
 		--exclude="/run/*" \
 		--exclude="/mnt/*" \
 		--exclude="/media/*" \
@@ -31,5 +32,6 @@ else
 	# media and other stuff folder
 	sudo rsync -aAX --delete \
 		--exclude="/home/*/zzz/mom_laptop" \
+		--exclude="/home/doom/zzz/tv" \
 		/home/*/zzz/ /mnt/zzz
 fi

@@ -7,6 +7,8 @@
     <keyboard-shortcut first-keystroke="ctrl period" />
     <keyboard-shortcut first-keystroke="shift alt f" />
   </action>
+  <action id="Diff.ShowSettingsPopup" />
+  <action id="DuplicatesForm.SendToLeft" />
   <action id="EditorDecreaseFontSize">
     <keyboard-shortcut first-keystroke="shift ctrl j" />
   </action>
@@ -15,10 +17,25 @@
   </action>
   <action id="EditorJoinLines" />
   <action id="EditorSelectWord" />
+  <action id="EditorUnSelectWord" />
+  <action id="ExternalJavaDoc">
+    <keyboard-shortcut first-keystroke="shift f1" />
+    <keyboard-shortcut first-keystroke="ctrl 1" />
+  </action>
+  <action id="FileChooser.GotoHome" />
+  <action id="GotoBookmark1" />
+  <action id="GuiDesigner.ShrinkSelection" />
+  <action id="QuickTypeDefinition">
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
   <action id="ShowPopupMenu">
     <keyboard-shortcut first-keystroke="context_menu" />
     <keyboard-shortcut first-keystroke="alt period" />
   </action>
   <action id="SmartSelect" />
+  <action id="SmartUnSelect" />
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="shift ctrl w" />
+  </action>
   <action id="Vcs.Push" />
 </keymap>

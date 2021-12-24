@@ -29,7 +29,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'glepnir/lspsaga.nvim'
 " completion
 Plug 'hrsh7th/nvim-cmp'
@@ -146,7 +146,7 @@ nnoremap <leader>w :exe ':silent !brave %'<CR>
 " Shortcutting split navigation, saving a keypress:
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j
-	map <C-k> <C-w>k
+	" map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
 "  Control i for prev buff

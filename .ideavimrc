@@ -10,6 +10,7 @@ set ignorecase smartcase
 set showmode
 set number relativenumber
 set history=1000
+set clipboard+=unnamedplus
 
 " easy window navigation
 nnoremap <c-l> <c-w>l
