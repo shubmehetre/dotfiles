@@ -350,7 +350,7 @@ lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incr
 
 " ==== utlisnips ==== Trigger configuration.
 let g:UltiSnipsExpandTrigger='<C-s>'
-let g:UltiSnipsJumpForwardTrigger='Tab>'
+let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 let g:UltiSnipsRemoveSelectModeMappings = 0
 " let g:UltiSnipsListSnippets = '<leader>us'

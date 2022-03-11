@@ -2,6 +2,7 @@
 
 # This file runs when a DM logs you into a graphical session.
 # If you use startx/xinit like a Chad, this file will also be sourced.
+xrandr --dpi 96
 
 setbg &			# set the background with the `setbg` script
 #xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &	# Uncomment to use Xresources colors/settings on startup
@@ -20,3 +21,7 @@ unclutter &		# Remove mouse when idle
 #	setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1
 
 amixer sset Master unmute
+
+pipewire &
+pipewire-pulse &
+pipewire-media-session &
