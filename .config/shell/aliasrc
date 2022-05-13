@@ -22,7 +22,8 @@ alias \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --add-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
+	yta="yt -x -f bestaudio/best -o '%(title)s.%(ext)s'" \
+	ytao="yt -x -f bestaudio/best -o '%(playlist_index)s-%(title)s.%(ext)s'" \
 	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
@@ -85,6 +86,9 @@ alias xclip="xclip -selection clipboard"
 
 # webserver : racknerd.com
 alias rack="ssh root@23.234.228.169"
+
+# rsync to webserver
+alias syncsite="hugo ; rsync -rtvzP ./public/ root@23.234.228.169:/var/www/smehetre --delete"
 
 # fzf
 

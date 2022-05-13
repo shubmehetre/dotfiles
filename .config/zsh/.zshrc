@@ -98,3 +98,5 @@ function cd {
 # if [ -f $last_dir_file ]
 #     then cd `cat $last_dir_file`
 # fi
+
+alias luamake=/home/doom/zzz/all_repos/lua-language-server/3rd/luamake/luamake

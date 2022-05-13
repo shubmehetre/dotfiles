@@ -12,9 +12,10 @@ env:
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
+# transparency/opacity
 window:
 
-  opacity: 0.9
+  opacity: 1
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -152,7 +153,7 @@ schemes:
   dracula: &dracula
     colors:
       primary:
-        background: '#282a36'
+        background: '#2596be'
         foreground: '#ffffff'
       cursor:
         text: CellBackground
