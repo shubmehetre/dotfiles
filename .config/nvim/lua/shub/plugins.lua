@@ -1,17 +1,17 @@
 local fn = vim.fn
 
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
     install_path,
   }
-  print "Installing packer. Restart nvim"
+  print 'Installing packer. Restart nvim'
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -24,7 +24,7 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
     return
 end
@@ -33,7 +33,7 @@ end
 packer.init {
     display = {
         open_fn = function()
-            return require("packer.util").float({ border = "rounded" })
+            return require('packer.util').float({ border = 'rounded' })
         end,
     },
 }
@@ -44,65 +44,106 @@ packer.init {
 return packer.startup(function(use)
 
     -- must have
-    use "lewis6991/impatient.nvim" -- Speed up loading Lua modules 
-    use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+    use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules 
+    use 'wbthomason/packer.nvim' -- Have packer manage itself
+    use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
+    use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
 
     -- colorscheme
     use 'folke/tokyonight.nvim' 
 
     -- cmp
-    use {
-        "hrsh7th/nvim-cmp",
-        requires = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline",
+    use ({
+        { 
+            'hrsh7th/nvim-cmp',
+--          event = 'InsertEnter',
+            config = function()
+                require('shub.cmp')
+            end,
         },
-    }
+        {
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
+        },
+    })
 
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "saadparwaiz1/cmp_luasnip" -- LuaSnip completion sources 
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    use 'L3MON4D3/LuaSnip' --snippet engine
+    use 'saadparwaiz1/cmp_luasnip' -- LuaSnip completion sources 
+    use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
 
     -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use 'neovim/nvim-lspconfig' -- enable LSP
+    use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
 
     -- treesitter
---  use {
---      "nvim-treesitter/nvim-treesitter",
---      run = ":TSUpdate",
---      config = function()
---          require("shub.nvim-treesitter").setup()
---      end,
---  }
+    use({
+        {
+            'nvim-treesitter/nvim-treesitter',
+            event = 'CursorHold',
+            run = ':TSUpdate',
+            config = function()
+                require('shub.configs.treesitter')
+            end,
+        },
+        { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
+    })
   
     -- Telescope
-    use "nvim-telescope/telescope.nvim"
-    use 'nvim-telescope/telescope-media-files.nvim'
+    use ({
+        {
+            'nvim-telescope/telescope.nvim',
+            event = 'CursorHold',
+            config = function()
+                require('shub.configs.telescope')
+            end,
+        },
+        { 'nvim-telescope/telescope-media-files.nvim', after = telescope },
+    })
 
     -- utils
-    use {
-        "ggandor/lightspeed.nvim",
-        { "windwp/nvim-autopairs", config = require "configs.autopairs" }
---      "airblade/vim-rooter" -- activate when needed
-    }
+    use ({
+            'ggandor/lightspeed.nvim',
+--      { 'windwp/nvim-autopairs', config = function() require('shub.configs.autopairs') } ,
+--      'airblade/vim-rooter' -- activate when needed
+    })
+
+--  use({
+--          'kyazdani42/nvim-web-devicons',
+--          opt = true,
+--          config = function()
+--              require('nvim-web-devicons').setup()
+--          end,
+--      })
+
+    use({
+            'windwp/nvim-autopairs',
+            event = 'InsertCharPre',
+            after = 'nvim-cmp',
+            config = function()
+                require('shub.configs.autopairs')
+            end,
+    })
 
 
     -- tpope
+    use({
+            'tpope/vim-surround',
+            event = 'BufRead',
+            requires = {
+                { 'tpope/vim-repeat', event = 'BufRead' },
+        },
+    })
+
     use {
-        "tpope/vim-repeat",
-        "tpope/vim-surround",
-        "tpope/vim-commentary",
---      "tpope/vim-fugitive",
---      "tpope/vim-unimpaired",
+        'tpope/vim-commentary',
+--      'tpope/vim-fugitive',
+--      'tpope/vim-unimpaired',
         {
-            "tpope/vim-sleuth",
+            'tpope/vim-sleuth',
             setup = function()
                 vim.g.sleuth_automatic = 0
             end,
@@ -110,14 +151,9 @@ return packer.startup(function(use)
     }
 
 
-
-
-
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
-      require("packer").sync()
+      require('packer').sync()
     end
 end)
-

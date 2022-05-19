@@ -75,13 +75,19 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["cmp-buffer"] = {
+    after_files = { "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
+    after_files = { "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-cmdline/after/plugin/cmp_cmdline.lua" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
@@ -90,13 +96,19 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lua"] = {
+    after_files = { "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
+    after_files = { "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-path/after/plugin/cmp_path.lua" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/cmp-path",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
@@ -120,14 +132,18 @@ _G.packer_plugins = {
     url = "https://github.com/ggandor/lightspeed.nvim"
   },
   ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.autopairs\frequire\0" },
+    load_after = {},
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
+    after = { "cmp-buffer", "nvim-autopairs", "cmp-cmdline", "cmp-path", "cmp-nvim-lua" },
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
+    only_config = true
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -138,6 +154,24 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    after = { "nvim-ts-rainbow" },
+    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28shub.configs.treesitter\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    load_after = {
+      ["nvim-treesitter"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -160,8 +194,11 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
   },
   ["telescope.nvim"] = {
-    loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.telescope\frequire\0" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
@@ -175,8 +212,10 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-repeat"] = {
-    loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-sleuth"] = {
@@ -186,8 +225,10 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-sleuth"
   },
   ["vim-surround"] = {
-    loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/vim-surround",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   }
 }
@@ -200,6 +241,26 @@ time([[Setup for vim-sleuth]], false)
 time([[packadd for vim-sleuth]], true)
 vim.cmd [[packadd vim-sleuth]]
 time([[packadd for vim-sleuth]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rshub.cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd cmp-path ]]
+time([[Sequenced loading]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-repeat', 'vim-surround'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
+vim.cmd [[au CursorHold * ++once lua require("packer.load")({'telescope.nvim', 'nvim-treesitter'}, { event = "CursorHold *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

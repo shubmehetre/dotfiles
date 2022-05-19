@@ -91,6 +91,7 @@ map("n", "<leader>5", "5gt", opts)
 map("n", "<leader>6", "6gt", opts)
 map("n", "<leader>7", "7gt", opts)
 map("n", "<leader>8", "8gt", opts)
+-- map("n", "<C-w>", "tabclose", opts)
 
 -- tab does not work in vim :(
 -- map("n", "<C-tab>", ":tabn<CR>", opts)
