@@ -97,6 +97,11 @@ map("n", "<leader>8", "8gt", opts)
 -- map("n", "<C-tab>", ":tabn<CR>", opts)
 -- map("n", "<C-S-tab>", ":tabp<CR>", opts)
 
+-- Telescope
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 -- map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 map("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
+
+-- nvim tree
+map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)

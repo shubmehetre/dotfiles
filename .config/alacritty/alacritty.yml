@@ -102,15 +102,27 @@ scrolling:
 #tabspaces: 8
 
 # Font configuration
+# font:
+#     normal:
+#         family: JetBrainsMono Nerd Font Mono
+#         style: Regular
+#     bold:
+#         family: JetBrains Mono Medium
+#         style: Bold
+#     italic:
+#         family: JetBrains Mono Medium
+#         style: Italic
+ 
+# Font configuration
 font:
     normal:
-        family: JetBrainsMono Nerd Font Mono
+        family: "JetBrains Mono Nerd Font"
         style: Regular
     bold:
-        family: JetBrains Mono Medium
+        family: "JetBrains Mono Nerd Font"
         style: Bold
     italic:
-        family: JetBrains Mono Medium
+        family: "JetBrains Mono Nerd Font" 
         style: Italic
 # Point size
     size: 8.0

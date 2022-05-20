@@ -49,9 +49,20 @@ return packer.startup(function(use)
     use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
     use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
 
-    -- colorscheme
-    use 'folke/tokyonight.nvim' 
-
+    -- Looks
+    use 'folke/tokyonight.nvim' -- theme
+    use ({
+        'akinsho/bufferline.nvim', 
+        config = function()
+            require('shub.configs.colorizer')
+        end,
+    })
+    use ({
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('shub.configs.colorizer')
+        end,
+    })
     -- cmp
     use ({
         { 
@@ -62,7 +73,7 @@ return packer.startup(function(use)
             end,
         },
         {
-            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lsp' }, -- dont lazy load this
             { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
@@ -92,7 +103,15 @@ return packer.startup(function(use)
         { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
     })
   
-    -- Telescope
+    -- Navigation and fuzzy search
+    use({
+            'kyazdani42/nvim-tree.lua',
+            event = 'CursorHold',
+            config = function()
+                require('shub.configs.nvim-tree')
+            end,
+    })
+
     use ({
         {
             'nvim-telescope/telescope.nvim',
@@ -111,13 +130,13 @@ return packer.startup(function(use)
 --      'airblade/vim-rooter' -- activate when needed
     })
 
---  use({
---          'kyazdani42/nvim-web-devicons',
---          opt = true,
---          config = function()
---              require('nvim-web-devicons').setup()
---          end,
---      })
+    use({
+            'kyazdani42/nvim-web-devicons',
+            opt = true,
+            config = function()
+                require('nvim-web-devicons').setup()
+            end,
+    })
 
     use({
             'windwp/nvim-autopairs',
