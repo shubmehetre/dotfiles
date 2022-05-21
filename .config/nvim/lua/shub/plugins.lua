@@ -54,7 +54,7 @@ return packer.startup(function(use)
     use ({
         'akinsho/bufferline.nvim', 
         config = function()
-            require('shub.configs.colorizer')
+            require('shub.configs.bufferline')
         end,
     })
     use ({
@@ -130,13 +130,7 @@ return packer.startup(function(use)
 --      'airblade/vim-rooter' -- activate when needed
     })
 
-    use({
-            'kyazdani42/nvim-web-devicons',
-            opt = true,
-            config = function()
-                require('nvim-web-devicons').setup()
-            end,
-    })
+    use 'kyazdani42/nvim-web-devicons'
 
     use({
             'windwp/nvim-autopairs',

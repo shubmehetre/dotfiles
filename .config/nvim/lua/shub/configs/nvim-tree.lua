@@ -1,12 +1,12 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 --
-vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1
-}
+   vim.g.nvim_tree_show_icons = {
+       git = 1,
+       folders = 1,
+       files = 1,
+       folder_arrows = 1
+   }
 
 
 vim.g.nvim_tree_icons = {
