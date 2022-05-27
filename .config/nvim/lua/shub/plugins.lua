@@ -54,6 +54,7 @@ return packer.startup(function(use)
     use { 'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
 --  use { 'norcalli/nvim-colorizer.lua', event = "BufRead", config = "require('shub.configs.colorizer')"}
     use { 'norcalli/nvim-colorizer.lua' }
+    use { 'lukas-reineke/indent-blankline.nvim', event = "BufWinEnter", config = "require('shub.configs.indent-blankline')" }
 
     -- Status bar
     use { 'nvim-lualine/lualine.nvim', event = "BufWinEnter", config = "require('shub.configs.lualine')" }
@@ -79,8 +80,9 @@ return packer.startup(function(use)
     use 'RRethy/vim-illuminate'
 
     -- treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', event = "BufWinEnter", config = "require('shub.configs.treesitter')" }
-    use { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
+--  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', event = "VimEnter", config = "require('shub.configs.treesitter')" }
+-- to much   use { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
   
     -- Navigation and fuzzy search
     use { 'kyazdani42/nvim-tree.lua', config = "require('shub.configs.nvim-tree')" }
@@ -94,7 +96,8 @@ return packer.startup(function(use)
     use 'kyazdani42/nvim-web-devicons' -- dont lazy load this as well
 
     use { 'windwp/nvim-autopairs', event = "BufWinEnter", config = "require('shub.configs.autopairs')" }
-
+--  use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns)"}
+    use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns')" }
 
     -- tpope
     use({
