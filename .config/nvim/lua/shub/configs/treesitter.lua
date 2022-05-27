@@ -12,7 +12,6 @@ ts.setup {
   },
   indent = { enable = true, disable = { "yaml" } },
 }
-
 -- ts rainbow
 require("nvim-treesitter.configs").setup {
   highlight = {

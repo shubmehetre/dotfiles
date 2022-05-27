@@ -75,7 +75,7 @@ alias ucold="umount -l /dev/sdb1"
 alias unmute="amixer sset Master unmute"
 
 # play music
-alias hood="mpv --shuffle /home/doom/zzz/songs/playlists/The_Hood/"
+alias hood="mpv --shuffle /home/doom/zzz/songs/playlists/The_Hood/ --no-video"
 alias home="mpv --shuffle /home/doom/zzz/songs/playlists/Home/"
 alias gully="mpv --shuffle /home/doom/zzz/songs/playlists/Bandana_GAnG/"
 alias focus="mpv --shuffle /home/doom/zzz/songs/focus/"

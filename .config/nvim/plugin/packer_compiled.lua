@@ -75,9 +75,11 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["bufferline.nvim"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28shub.configs.bufferline\frequire\0" },
-    loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    config = { "require('shub.configs.bufferline')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
@@ -118,13 +120,18 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
+    after_files = { "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp_luasnip/after/plugin/cmp_luasnip.lua" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["friendly-snippets"] = {
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["impatient.nvim"] = {
@@ -137,9 +144,16 @@ _G.packer_plugins = {
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
   },
+  ["lualine.nvim"] = {
+    config = { "require('shub.configs.lualine')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-autopairs"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.autopairs\frequire\0" },
-    load_after = {},
+    config = { "require('shub.configs.autopairs')" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -147,12 +161,11 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-buffer", "cmp-path", "cmp-cmdline", "cmp-nvim-lua", "nvim-autopairs" },
     loaded = true,
-    only_config = true
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.colorizer\frequire\0" },
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
@@ -168,16 +181,14 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.nvim-tree\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua",
+    config = { "require('shub.configs.nvim-tree')" },
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     after = { "nvim-ts-rainbow" },
-    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28shub.configs.treesitter\frequire\0" },
+    config = { "require('shub.configs.treesitter')" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -219,11 +230,9 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
   },
   ["telescope.nvim"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.telescope\frequire\0" },
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
+    config = { "require('shub.configs.telescope')" },
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
@@ -235,6 +244,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-repeat"] = {
     loaded = false,
@@ -266,32 +280,30 @@ time([[Setup for vim-sleuth]], false)
 time([[packadd for vim-sleuth]], true)
 vim.cmd [[packadd vim-sleuth]]
 time([[packadd for vim-sleuth]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27shub.configs.colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rshub.cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28shub.configs.bufferline\frequire\0", "config", "bufferline.nvim")
-time([[Config for bufferline.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('shub.configs.telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('shub.configs.nvim-tree')
+time([[Config for nvim-tree.lua]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp_luasnip ]]
 vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd friendly-snippets ]]
+vim.cmd [[ packadd cmp-buffer ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-repeat', 'vim-surround'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
-vim.cmd [[au CursorHold * ++once lua require("packer.load")({'telescope.nvim', 'nvim-treesitter', 'nvim-tree.lua'}, { event = "CursorHold *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'bufferline.nvim', 'nvim-treesitter', 'lualine.nvim', 'nvim-autopairs'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

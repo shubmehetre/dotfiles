@@ -49,97 +49,51 @@ return packer.startup(function(use)
     use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
     use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
 
-    -- Looks
+    -- Look n Feel
     use 'folke/tokyonight.nvim' -- theme
-    use ({
-        'akinsho/bufferline.nvim', 
-        config = function()
-            require('shub.configs.bufferline')
-        end,
-    })
-    use ({
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            require('shub.configs.colorizer')
-        end,
-    })
+    use { 'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
+--  use { 'norcalli/nvim-colorizer.lua', event = "BufRead", config = "require('shub.configs.colorizer')"}
+    use { 'norcalli/nvim-colorizer.lua' }
+
+    -- Status bar
+    use { 'nvim-lualine/lualine.nvim', event = "BufWinEnter", config = "require('shub.configs.lualine')" }
+    
     -- cmp
-    use ({
-        { 
-            'hrsh7th/nvim-cmp',
---          event = 'InsertEnter',
-            config = function()
-                require('shub.cmp')
-            end,
-        },
-        {
+    use 'hrsh7th/nvim-cmp'
+    use {
             { 'hrsh7th/cmp-nvim-lsp' }, -- dont lazy load this
             { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
-        },
-    })
+        }
 
     -- snippets
-    use 'L3MON4D3/LuaSnip' --snippet engine
-    use 'saadparwaiz1/cmp_luasnip' -- LuaSnip completion sources 
-    use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
+    use { 'L3MON4D3/LuaSnip' } --snippet engine
+    use { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'} -- LuaSnip completion sources 
+    use { 'rafamadriz/friendly-snippets', after = 'nvim-cmp'} -- a bunch of snippets to use
 
     -- LSP
     use 'neovim/nvim-lspconfig' -- enable LSP
     use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
+    use 'RRethy/vim-illuminate'
 
     -- treesitter
-    use({
-        {
-            'nvim-treesitter/nvim-treesitter',
-            event = 'CursorHold',
-            run = ':TSUpdate',
-            config = function()
-                require('shub.configs.treesitter')
-            end,
-        },
-        { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' },
-    })
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', event = "BufWinEnter", config = "require('shub.configs.treesitter')" }
+    use { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
   
     -- Navigation and fuzzy search
-    use({
-            'kyazdani42/nvim-tree.lua',
-            event = 'CursorHold',
-            config = function()
-                require('shub.configs.nvim-tree')
-            end,
-    })
-
-    use ({
-        {
-            'nvim-telescope/telescope.nvim',
-            event = 'CursorHold',
-            config = function()
-                require('shub.configs.telescope')
-            end,
-        },
-        { 'nvim-telescope/telescope-media-files.nvim', after = telescope },
-    })
+    use { 'kyazdani42/nvim-tree.lua', config = "require('shub.configs.nvim-tree')" }
+    use { 'nvim-telescope/telescope.nvim', config = "require('shub.configs.telescope')" }
+    use { 'nvim-telescope/telescope-media-files.nvim', after = telescope }
 
     -- utils
-    use ({
-            'ggandor/lightspeed.nvim',
---      { 'windwp/nvim-autopairs', config = function() require('shub.configs.autopairs') } ,
+    use { 'ggandor/lightspeed.nvim' }
 --      'airblade/vim-rooter' -- activate when needed
-    })
 
-    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-web-devicons' -- dont lazy load this as well
 
-    use({
-            'windwp/nvim-autopairs',
-            event = 'InsertCharPre',
-            after = 'nvim-cmp',
-            config = function()
-                require('shub.configs.autopairs')
-            end,
-    })
+    use { 'windwp/nvim-autopairs', event = "BufWinEnter", config = "require('shub.configs.autopairs')" }
 
 
     -- tpope

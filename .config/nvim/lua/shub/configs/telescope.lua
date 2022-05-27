@@ -3,9 +3,8 @@ if not status_ok then
   return
 end
 
-telescope.load_extension('media_files')
-
 local actions = require "telescope.actions"
+telescope.load_extension "media_files"
 
 telescope.setup {
   defaults = {
