@@ -51,6 +51,8 @@ return packer.startup(function(use)
 
     -- Look n Feel
     use 'folke/tokyonight.nvim' -- theme
+    use 'marko-cerovac/material.nvim' 
+    use 'bluz71/vim-moonfly-colors'
     use { 'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
 --  use { 'norcalli/nvim-colorizer.lua', event = "BufRead", config = "require('shub.configs.colorizer')"}
     use { 'norcalli/nvim-colorizer.lua' }

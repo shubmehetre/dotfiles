@@ -14,6 +14,7 @@ local options = {
     number = true,                           -- set numbered lines
     numberwidth = 4,                         -- set number column width to 2 {default 4}
     pumheight = 10,                          -- pop up menu height
+    pumwidth = 30,
     relativenumber = true,                  -- set relative numbered lines
     showmode = false,
     showtabline = 1,
