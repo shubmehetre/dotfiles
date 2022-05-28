@@ -41,6 +41,9 @@ map("n", "<leader>e", ":Lex 30<cr>", opts)
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Delete current buffer
+map("n", "<leader>d", ":bdelete<CR>", opts)
+
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
