@@ -79,10 +79,9 @@ return packer.startup(function(use)
     -- LSP
     use 'neovim/nvim-lspconfig' -- enable LSP
     use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
-    use 'RRethy/vim-illuminate'
+    use 'RRethy/vim-illuminate' -- hover highlights similar words
 
     -- treesitter
---  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', event = "VimEnter", config = "require('shub.configs.treesitter')" }
 -- to much   use { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
   
@@ -91,11 +90,14 @@ return packer.startup(function(use)
     use { 'nvim-telescope/telescope.nvim', config = "require('shub.configs.telescope')" }
     use { 'nvim-telescope/telescope-media-files.nvim', after = telescope }
 
+    -- QuickFix
+    use { 'folke/trouble.nvim' }
+
     -- utils
-    use { 'ggandor/lightspeed.nvim' }
+    use { 'ggandor/lightspeed.nvim' } -- type 's' to search instead of '/'
 --      'airblade/vim-rooter' -- activate when needed
 
-    use 'kyazdani42/nvim-web-devicons' -- dont lazy load this as well
+    use 'kyazdani42/nvim-web-devicons' -- icons for cmp, nvim-tree, lualine, bufferline. dont lazy load this as well
 
     use { 'windwp/nvim-autopairs', event = "BufWinEnter", config = "require('shub.configs.autopairs')" }
 --  use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns)"}

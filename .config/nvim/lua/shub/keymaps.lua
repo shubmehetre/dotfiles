@@ -51,7 +51,6 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- complete braces, paranthesis => use auto-pairs
-
 map("i", "{<CR>", "{<CR>}<Esc>O", opts)
 
 -- Resize with arrows
@@ -75,6 +74,10 @@ map("n", "<leader>w", ":exe ':silent !brave %'<CR>", opts)
 
 -- dot commands on visual blocks
 map("v", ".", ":normal .<C>", opts)
+
+-- Splits
+map("n", "<leader>v", ":vsplit<CR>", opts)
+map("n", "<leader>h", ":split<CR>", opts)
 
 -- Terminal --
 map("n", "<leader>z", ":14sp +terminal<CR>i", opts)
