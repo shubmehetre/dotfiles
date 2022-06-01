@@ -111,3 +111,6 @@ map("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
 
 -- nvim tree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+
+-- command line commands
+map("c", "w!!", ":write !sudo tee  > /dev/null %", opts)

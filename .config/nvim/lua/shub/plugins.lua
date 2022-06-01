@@ -3,14 +3,7 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    'git',
-    'clone',
-    '--depth',
-    '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path,
-  }
+  PACKER_BOOTSTRAP = fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
   print 'Installing packer. Restart nvim'
   vim.cmd [[packadd packer.nvim]]
 end
@@ -32,9 +25,20 @@ end
 -- Have packer use a popup window
 packer.init {
     display = {
-        open_fn = function()
-            return require('packer.util').float({ border = 'rounded' })
-        end,
+        auto_clean = true,
+	    compile_on_sync = true,
+	    disable_commands = true,
+	    git = { clone_timeout = 6000 },
+	    display = {
+		    working_sym = "ﲊ",
+		    error_sym = "✗",
+		    done_sym = "﫟",
+		    removed_sym = "",
+		    moved_sym = "",
+            open_fn = function()
+                return require('packer.util').float({ border = 'rounded' })
+            end,
+        }
     },
 }
 
@@ -53,10 +57,10 @@ return packer.startup(function(use)
     use 'folke/tokyonight.nvim' -- theme
     use 'marko-cerovac/material.nvim' 
     use 'bluz71/vim-moonfly-colors'
-    use { 'akinsho/bufferline.nvim', event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
+    use { 'akinsho/bufferline.nvim', disable = true, event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
 --  use { 'norcalli/nvim-colorizer.lua', event = "BufRead", config = "require('shub.configs.colorizer')"}
     use { 'norcalli/nvim-colorizer.lua' }
-    use { 'lukas-reineke/indent-blankline.nvim', event = "BufWinEnter", config = "require('shub.configs.indent-blankline')" }
+    use { 'lukas-reineke/indent-blankline.nvim', config = "require('shub.configs.indent_blankline')" }
 
     -- Status bar
     use { 'nvim-lualine/lualine.nvim', event = "BufWinEnter", config = "require('shub.configs.lualine')" }
@@ -99,6 +103,7 @@ return packer.startup(function(use)
 
     use 'kyazdani42/nvim-web-devicons' -- icons for cmp, nvim-tree, lualine, bufferline. dont lazy load this as well
 
+    use { 'simrat39/symbols-outline.nvim' }
     use { 'windwp/nvim-autopairs', event = "BufWinEnter", config = "require('shub.configs.autopairs')" }
 --  use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns)"}
     use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns')" }

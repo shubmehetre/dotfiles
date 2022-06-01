@@ -22,8 +22,8 @@ local kind_icons = {
   Function = " Function",
   Constructor = " Constructor",
   Field = " Field",
-  Variable = " Variable",
   Class = " Class",
+  Variable = " Variable",
   Interface = " Interface",
   Module = " Module",
   Property = " Property",
@@ -123,13 +123,19 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
+-- cmp window / float window background color
   window = {
-      documentation = {
-          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      },
+        documentation = {
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+        },
+        completion = {
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+        },
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

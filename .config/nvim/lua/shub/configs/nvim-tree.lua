@@ -12,6 +12,11 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
     renderer = {
+--      add_trailing = false,
+--      group_empty = false,
+--      highlight_git = false,
+--      highlight_opened_files = "none",
+        root_folder_modifier = ":t",
         indent_markers = {
             enable = false,
             icons = {
@@ -21,7 +26,7 @@ nvim_tree.setup {
             },
         },
         icons = {
-            webdev_colors = false,
+            webdev_colors = true,
             git_placement = "before",
             padding = " ",
             symlink_arrow = " ➛ ",
@@ -29,7 +34,7 @@ nvim_tree.setup {
                 file = true,
                 folder = true,
                 folder_arrow = true,
-                git = true,
+                git = false,
             },
             glyphs = {
                 default = "",

@@ -74,14 +74,6 @@ _G.packer_plugins = {
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bufferline.nvim"] = {
-    config = { "require('shub.configs.bufferline')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["cmp-buffer"] = {
     after_files = { "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
     load_after = {},
@@ -148,11 +140,9 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["indent-blankline.nvim"] = {
-    config = { "require('shub.configs.indent-blankline')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim",
+    config = { "require('shub.configs.indent_blankline')" },
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lightspeed.nvim"] = {
@@ -235,6 +225,11 @@ _G.packer_plugins = {
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -301,31 +296,35 @@ time([[Setup for vim-sleuth]], false)
 time([[packadd for vim-sleuth]], true)
 vim.cmd [[packadd vim-sleuth]]
 time([[packadd for vim-sleuth]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('shub.configs.nvim-tree')
-time([[Config for nvim-tree.lua]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('shub.configs.telescope')
 time([[Config for telescope.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('shub.configs.nvim-tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require('shub.configs.indent_blankline')
+time([[Config for indent-blankline.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd cmp-nvim-lua ]]
-vim.cmd [[ packadd friendly-snippets ]]
-vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp_luasnip ]]
+vim.cmd [[ packadd friendly-snippets ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-nvim-lua ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-repeat', 'vim-surround'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'lualine.nvim', 'nvim-autopairs', 'gitsigns.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-surround', 'vim-repeat'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'bufferline.nvim', 'gitsigns.nvim', 'indent-blankline.nvim', 'lualine.nvim', 'nvim-autopairs'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
