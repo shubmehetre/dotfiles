@@ -158,11 +158,6 @@ _G.packer_plugins = {
     path = "/home/doom/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
-  },
   ["nvim-autopairs"] = {
     config = { "require('shub.configs.autopairs')" },
     loaded = false,
@@ -206,8 +201,11 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26shub.configs.devicons\frequire\0" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -312,18 +310,24 @@ time([[Config for indent-blankline.nvim]], false)
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd friendly-snippets ]]
 vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd friendly-snippets ]]
 vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd plenary.nvim ]]
+vim.cmd [[ packadd nvim-web-devicons ]]
+
+-- Config for: nvim-web-devicons
+try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26shub.configs.devicons\frequire\0", "config", "nvim-web-devicons")
+
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'lualine.nvim', 'nvim-autopairs', 'gitsigns.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-surround', 'vim-repeat'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'lualine.nvim', 'nvim-autopairs', 'gitsigns.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

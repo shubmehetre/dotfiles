@@ -55,7 +55,7 @@ return packer.startup(function(use)
 
     -- Look n Feel
     use 'folke/tokyonight.nvim' -- theme
-    use 'marko-cerovac/material.nvim' 
+--  use 'marko-cerovac/material.nvim' 
     use 'bluz71/vim-moonfly-colors'
     use { 'akinsho/bufferline.nvim', disable = true, event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
 --  use { 'norcalli/nvim-colorizer.lua', event = "BufRead", config = "require('shub.configs.colorizer')"}
@@ -101,7 +101,13 @@ return packer.startup(function(use)
     use { 'ggandor/lightspeed.nvim' } -- type 's' to search instead of '/'
 --      'airblade/vim-rooter' -- activate when needed
 
-    use 'kyazdani42/nvim-web-devicons' -- icons for cmp, nvim-tree, lualine, bufferline. dont lazy load this as well
+    use { 
+            'kyazdani42/nvim-web-devicons',
+            after = "plenary.nvim",
+    		config = function()
+			    require "shub.configs.devicons"
+		    end,
+	    }
 
     use { 'simrat39/symbols-outline.nvim' }
     use { 'windwp/nvim-autopairs', event = "BufWinEnter", config = "require('shub.configs.autopairs')" }
