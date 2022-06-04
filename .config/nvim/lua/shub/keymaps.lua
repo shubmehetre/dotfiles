@@ -51,7 +51,7 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- complete braces, paranthesis => use auto-pairs
-map("i", "{<CR>", "{<CR>}<Esc>O", opts)
+-- map("i", "{<CR>", "{<CR>}<Esc>O", opts)
 
 -- Resize with arrows
 map("n", "<C-Up>", ":resize +2<CR>", opts)

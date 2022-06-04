@@ -57,13 +57,12 @@ return packer.startup(function(use)
     use 'folke/tokyonight.nvim' -- theme
 --  use 'marko-cerovac/material.nvim' 
     use 'bluz71/vim-moonfly-colors'
-    use { 'akinsho/bufferline.nvim', disable = true, event = "BufWinEnter", config = "require('shub.configs.bufferline')" }
---  use { 'norcalli/nvim-colorizer.lua', event = "BufRead", config = "require('shub.configs.colorizer')"}
-    use { 'norcalli/nvim-colorizer.lua' }
-    use { 'lukas-reineke/indent-blankline.nvim', config = "require('shub.configs.indent_blankline')" }
+    use { 'akinsho/bufferline.nvim', disable = true, after = "nvim-web-devicons", config = "require('shub.config.bufferline')" }
+    use { 'norcalli/nvim-colorizer.lua', opt = true, config = "require('shub.config.colorizer')"}
+    use { 'lukas-reineke/indent-blankline.nvim', config = "require('shub.config.indent-blankline')" }
 
     -- Status bar
-    use { 'nvim-lualine/lualine.nvim', event = "BufWinEnter", config = "require('shub.configs.lualine')" }
+    use { 'nvim-lualine/lualine.nvim', after = "nvim-web-devicons", config = "require('shub.config.lualine')" }
     
     -- cmp
     use 'hrsh7th/nvim-cmp'
@@ -73,6 +72,7 @@ return packer.startup(function(use)
             { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
+            { 'windwp/nvim-autopairs', after = "nvim-cmp", config = "require('shub.config.autopairs')" }
         }
 
     -- snippets
@@ -86,12 +86,11 @@ return packer.startup(function(use)
     use 'RRethy/vim-illuminate' -- hover highlights similar words
 
     -- treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', event = "VimEnter", config = "require('shub.configs.treesitter')" }
--- to much   use { 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = "require('shub.config.treesitter')" }
   
     -- Navigation and fuzzy search
-    use { 'kyazdani42/nvim-tree.lua', config = "require('shub.configs.nvim-tree')" }
-    use { 'nvim-telescope/telescope.nvim', config = "require('shub.configs.telescope')" }
+    use { 'kyazdani42/nvim-tree.lua', config = "require('shub.config.nvim-tree')" }
+    use { 'nvim-telescope/telescope.nvim', config = "require('shub.config.telescope')" }
     use { 'nvim-telescope/telescope-media-files.nvim', after = telescope }
 
     -- QuickFix
@@ -101,39 +100,13 @@ return packer.startup(function(use)
     use { 'ggandor/lightspeed.nvim' } -- type 's' to search instead of '/'
 --      'airblade/vim-rooter' -- activate when needed
 
-    use { 
-            'kyazdani42/nvim-web-devicons',
-            after = "plenary.nvim",
-    		config = function()
-			    require "shub.configs.devicons"
-		    end,
-	    }
-
-    use { 'simrat39/symbols-outline.nvim' }
-    use { 'windwp/nvim-autopairs', event = "BufWinEnter", config = "require('shub.configs.autopairs')" }
---  use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns)"}
-    use { 'lewis6991/gitsigns.nvim', event = "BufWinEnter", config = "require('shub.configs.gitsigns')" }
+    use {  'kyazdani42/nvim-web-devicons', after = "plenary.nvim", config = "require('shub.config.devicons')" }
+    use { 'simrat39/symbols-outline.nvim', config =  "require('shub.config.symbols-outline')"}
+    use { 'lewis6991/gitsigns.nvim', opt = true, config = "require('shub.config.gitsigns')" }
 
     -- tpope
-    use({
-            'tpope/vim-surround',
-            event = 'BufRead',
-            requires = {
-                { 'tpope/vim-repeat', event = 'BufRead' },
-        },
-    })
-
-    use {
-        'tpope/vim-commentary',
---      'tpope/vim-fugitive',
---      'tpope/vim-unimpaired',
-        {
-            'tpope/vim-sleuth',
-            setup = function()
-                vim.g.sleuth_automatic = 0
-            end,
-        },
-    }
+    use 'tpope/vim-surround'
+    use 'tpope/vim-commentary' 
 
 
     -- Automatically set up your configuration after cloning packer.nvim

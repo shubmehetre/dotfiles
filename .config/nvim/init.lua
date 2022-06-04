@@ -18,9 +18,8 @@ require "shub.options"
 require "shub.keymaps"
 require "shub.plugins"
 require "shub.autocmds"
-require "shub.utils"
 
 -- Plugin confings
 require "shub.lsp"
 require "shub.cmp"
-require "shub.configs.colorscheme"
+require "shub.config.colorscheme"
