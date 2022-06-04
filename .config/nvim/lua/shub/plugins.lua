@@ -48,14 +48,14 @@ packer.init {
 return packer.startup(function(use)
 
     -- must have
-    use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules 
+    use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules
     use 'wbthomason/packer.nvim' -- Have packer manage itself
     use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
     use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
 
     -- Look n Feel
     use 'folke/tokyonight.nvim' -- theme
---  use 'marko-cerovac/material.nvim' 
+--  use 'marko-cerovac/material.nvim'
     use 'bluz71/vim-moonfly-colors'
     use { 'akinsho/bufferline.nvim', disable = true, after = "nvim-web-devicons", config = "require('shub.config.bufferline')" }
     use { 'norcalli/nvim-colorizer.lua', opt = true, config = "require('shub.config.colorizer')"}
@@ -63,7 +63,7 @@ return packer.startup(function(use)
 
     -- Status bar
     use { 'nvim-lualine/lualine.nvim', after = "nvim-web-devicons", config = "require('shub.config.lualine')" }
-    
+
     -- cmp
     use 'hrsh7th/nvim-cmp'
     use {
@@ -77,7 +77,7 @@ return packer.startup(function(use)
 
     -- snippets
     use { 'L3MON4D3/LuaSnip' } --snippet engine
-    use { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'} -- LuaSnip completion sources 
+    use { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'} -- LuaSnip completion sources
     use { 'rafamadriz/friendly-snippets', after = 'nvim-cmp'} -- a bunch of snippets to use
 
     -- LSP
@@ -87,11 +87,16 @@ return packer.startup(function(use)
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = "require('shub.config.treesitter')" }
-  
+
     -- Navigation and fuzzy search
     use { 'kyazdani42/nvim-tree.lua', config = "require('shub.config.nvim-tree')" }
     use { 'nvim-telescope/telescope.nvim', config = "require('shub.config.telescope')" }
     use { 'nvim-telescope/telescope-media-files.nvim', after = telescope }
+    use {
+            'nvim-telescope/telescope-fzf-native.nvim',
+            after = 'telescope.nvim',
+            run = 'make',
+         }
 
     -- QuickFix
     use { 'folke/trouble.nvim' }
@@ -106,7 +111,7 @@ return packer.startup(function(use)
 
     -- tpope
     use 'tpope/vim-surround'
-    use 'tpope/vim-commentary' 
+    use 'tpope/vim-commentary'
 
 
     -- Automatically set up your configuration after cloning packer.nvim

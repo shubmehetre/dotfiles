@@ -6,7 +6,6 @@ d   ${XDG_DOCUMENTS_DIR:-$HOME/Documents}
 dt  ${XDG_DATA_HOME:-$HOME/.local/share}
 rr  ${XDG_DATA_HOME:-$HOME/.local/src}
 h   $HOME
-m   ${XDG_MUSIC_DIR:-$HOME/Music}
 mnt /mnt
 pp  ${XDG_PICTURES_DIR:-$HOME/Pictures}
 sc  $HOME/.local/bin
@@ -14,3 +13,4 @@ src $HOME/.local/src
 vv  ${XDG_VIDEOS_DIR:-$HOME/Videos}
 nbd $HOME/.local/share/newsboat/nb_downloads/
 songs $HOME/zzz/songs/
+nv $HOME/.config/nvim/

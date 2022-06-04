@@ -11,7 +11,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- no comments wen going on new line
--- func for toggling the bottom statusbar
 
 -- some utilily maps
 map("n", "<C-s>", ":w<CR>", opts)
@@ -106,11 +105,14 @@ map("n", "<leader>8", "8gt", opts)
 -- Telescope
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 -- map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-map("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<leader>c", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>", opts)
 
--- nvim tree
+-- nvim treep
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 
 -- command line commands
 map("c", "w!!", ":write !sudo tee  > /dev/null %", opts)
+
+-- toggle statusbar
