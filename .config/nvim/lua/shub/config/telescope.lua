@@ -17,6 +17,7 @@ telescope.setup {
       i = {
         -- overrides
         ["<esc>"] = actions.close,
+        ["<C-x>"] = actions.delete_buffer,
         ["<C-n>"] = actions.cycle_history_next,
         ["<C-p>"] = actions.cycle_history_prev,
         ["<C-j>"] = actions.move_selection_next,
@@ -62,4 +63,4 @@ telescope.setup {
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
--- telescope.load_extension "fzf"
+telescope.load_extension('fzf')

@@ -27,12 +27,12 @@ autocmd('BufWritePre',
     })
 
 -- highlight on yank
-autocmd("TextYankPost",
-    {
-        callback = function()
-          vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
-        end,
-    })
+-- autocmd("TextYankPost",
+--     {
+--         callback = function()
+--           vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
+--         end,
+--     })
 
 -- close some buffers using 'q'
 autocmd( "FileType",

@@ -1,13 +1,13 @@
 ﻿<settings>
-  <setting name="window-size-width" type="System.Int32">1914</setting>
-  <setting name="window-size-height" type="System.Int32">1055</setting>
+  <setting name="window-size-width" type="System.Int32">677</setting>
+  <setting name="window-size-height" type="System.Int32">668</setting>
   <setting name="ruler-metric" type="System.Int32">0</setting>
   <setting name="window-maximized" type="System.Boolean">False</setting>
   <setting name="ruler-shown" type="System.Boolean">False</setting>
   <setting name="image-tabs-shown" type="System.Boolean">False</setting>
   <setting name="toolbar-shown" type="System.Boolean">False</setting>
   <setting name="pixel-grid-shown" type="System.Boolean">False</setting>
-  <setting name="last-dialog-directory" type="System.String">/home/doom/zzz/Downloads</setting>
+  <setting name="last-dialog-directory" type="System.String">/home/doom/zzz/files/personal/random</setting>
   <setting name="jpg-quality" type="System.Int32">100</setting>
   <setting name="dock-layers-minimized" type="System.Boolean">False</setting>
   <setting name="dock-history-minimized" type="System.Boolean">False</setting>

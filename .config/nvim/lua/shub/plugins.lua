@@ -61,7 +61,7 @@ return packer.startup(function(use)
     use { 'norcalli/nvim-colorizer.lua', opt = true, config = "require('shub.config.colorizer')"}
     use { 'lukas-reineke/indent-blankline.nvim', config = "require('shub.config.indent-blankline')" }
 
-    -- Status bar
+    -- Status ba
     use { 'nvim-lualine/lualine.nvim', after = "nvim-web-devicons", config = "require('shub.config.lualine')" }
 
     -- cmp
@@ -84,6 +84,7 @@ return packer.startup(function(use)
     use 'neovim/nvim-lspconfig' -- enable LSP
     use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
     use 'RRethy/vim-illuminate' -- hover highlights similar words
+    use { "jose-elias-alvarez/null-ls.nvim", config = "require('shub.lsp.null-ls')" }  -- hook external sourcers into inbuilt lsp( for formatters, linters, etc)
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = "require('shub.config.treesitter')" }
@@ -94,7 +95,6 @@ return packer.startup(function(use)
     use { 'nvim-telescope/telescope-media-files.nvim', after = telescope }
     use {
             'nvim-telescope/telescope-fzf-native.nvim',
-            after = 'telescope.nvim',
             run = 'make',
          }
 
@@ -103,11 +103,12 @@ return packer.startup(function(use)
 
     -- utils
     use { 'ggandor/lightspeed.nvim' } -- type 's' to search instead of '/'
+    use { 'numToStr/Comment.nvim', config = "require('shub.config.comment')" }
 --      'airblade/vim-rooter' -- activate when needed
 
     use {  'kyazdani42/nvim-web-devicons', after = "plenary.nvim", config = "require('shub.config.devicons')" }
     use { 'simrat39/symbols-outline.nvim', config =  "require('shub.config.symbols-outline')"}
-    use { 'lewis6991/gitsigns.nvim', opt = true, config = "require('shub.config.gitsigns')" }
+    use { 'lewis6991/gitsigns.nvim', config = "require('shub.config.gitsigns')" }
 
     -- tpope
     use 'tpope/vim-surround'
