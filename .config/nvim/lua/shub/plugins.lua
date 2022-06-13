@@ -104,6 +104,9 @@ return packer.startup(function(use)
     -- utils
     use { 'ggandor/lightspeed.nvim' } -- type 's' to search instead of '/'
     use { 'numToStr/Comment.nvim', config = "require('shub.config.comment')" }
+    -- use { 'Djancyp/cheat-sheet' }
+    use { 'RishabhRD/nvim-cheat.sh' }
+    use { 'RishabhRD/popfix' }
 --      'airblade/vim-rooter' -- activate when needed
 
     use {  'kyazdani42/nvim-web-devicons', after = "plenary.nvim", config = "require('shub.config.devicons')" }

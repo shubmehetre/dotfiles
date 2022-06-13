@@ -103,11 +103,11 @@ map("n", "<leader>8", "8gt", opts)
 -- map("n", "<C-S-tab>", ":tabp<CR>", opts)
 
 -- Telescope
-map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 -- map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-map("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
-map("n", "<leader>c", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>", opts)
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>", opts)
 
 -- nvim treep
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
@@ -117,5 +117,8 @@ map("c", "w!!", ":write !sudo tee  > /dev/null %", opts)
 
 -- Prettify code
 map("n", "<leader>p", "<cmd>Format<cr>", opts)
+
+-- Cheat
+map("n", "<leader>c", "<cmd>Cheat<cr>", opts)
 
 -- toggle statusbar

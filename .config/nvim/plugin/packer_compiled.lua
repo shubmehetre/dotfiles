@@ -176,6 +176,11 @@ _G.packer_plugins = {
     path = "/home/doom/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
+  ["nvim-cheat.sh"] = {
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh",
+    url = "https://github.com/RishabhRD/nvim-cheat.sh"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -228,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/start/popfix",
+    url = "https://github.com/RishabhRD/popfix"
   },
   ["popup.nvim"] = {
     loaded = true,
@@ -289,30 +299,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('shub.config.nvim-tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('shub.config.gitsigns')
-time([[Config for gitsigns.nvim]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-require('shub.lsp.null-ls')
-time([[Config for null-ls.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require('shub.config.indent-blankline')
-time([[Config for indent-blankline.nvim]], false)
--- Config for: symbols-outline.nvim
-time([[Config for symbols-outline.nvim]], true)
-require('shub.config.symbols-outline')
-time([[Config for symbols-outline.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require('shub.config.comment')
-time([[Config for Comment.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('shub.config.telescope')
@@ -321,20 +307,32 @@ time([[Config for telescope.nvim]], false)
 time([[Config for nvim-treesitter]], true)
 require('shub.config.treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('shub.config.gitsigns')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('shub.config.nvim-tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require('shub.config.indent-blankline')
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('shub.lsp.null-ls')
+time([[Config for null-ls.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require('shub.config.comment')
+time([[Config for Comment.nvim]], false)
+-- Config for: symbols-outline.nvim
+time([[Config for symbols-outline.nvim]], true)
+require('shub.config.symbols-outline')
+time([[Config for symbols-outline.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd cmp-nvim-lua ]]
-vim.cmd [[ packadd nvim-autopairs ]]
-
--- Config for: nvim-autopairs
-require('shub.config.autopairs')
-
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd friendly-snippets ]]
-vim.cmd [[ packadd cmp_luasnip ]]
 vim.cmd [[ packadd plenary.nvim ]]
 vim.cmd [[ packadd nvim-web-devicons ]]
 
@@ -346,6 +344,18 @@ vim.cmd [[ packadd lualine.nvim ]]
 -- Config for: lualine.nvim
 require('shub.config.lualine')
 
+vim.cmd [[ packadd nvim-cmp ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd friendly-snippets ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp_luasnip ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd nvim-autopairs ]]
+
+-- Config for: nvim-autopairs
+require('shub.config.autopairs')
+
+vim.cmd [[ packadd cmp-nvim-lua ]]
 time([[Sequenced loading]], false)
 if should_profile then save_profiles() end
 
