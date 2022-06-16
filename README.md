@@ -4,11 +4,11 @@
 ### Editor: Neovim
 ![image](https://user-images.githubusercontent.com/37409002/174189339-d0587ae3-ab41-4614-a408-ad97b5d67d7b.png)
 
-### Browser: Brave
-![image](https://user-images.githubusercontent.com/37409002/172706558-405d1cbe-f3d2-4d45-bbd1-6493aa0c73e3.png)
+### Browser: LibreWolf
+![image](https://user-images.githubusercontent.com/37409002/174189864-1802456f-dc18-4dfb-a23f-ec2bbe8b42e2.png)
 
 ### Feeds: NewsBoat
-![image](https://user-images.githubusercontent.com/37409002/172490350-1940120e-754f-4733-912c-5100a1c6d755.png)
+![image](https://user-images.githubusercontent.com/37409002/174189924-f9ccd908-9af9-40fa-8b37-2f621dfbc058.png)
 
 ### Mail Client: Thunderbird
 ![image](https://user-images.githubusercontent.com/37409002/174054338-88fcb089-15a6-45b3-8c30-134be06d23d2.png)
