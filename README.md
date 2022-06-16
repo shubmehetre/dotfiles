@@ -10,3 +10,6 @@
 ### Feeds: NewsBoat
 ![image](https://user-images.githubusercontent.com/37409002/172490350-1940120e-754f-4733-912c-5100a1c6d755.png)
 
+### Mail Client
+![image](https://user-images.githubusercontent.com/37409002/174054338-88fcb089-15a6-45b3-8c30-134be06d23d2.png)
+
