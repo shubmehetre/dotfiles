@@ -2,7 +2,7 @@
 
 
 ### Editor: Neovim
-![image](https://user-images.githubusercontent.com/37409002/172489516-cadb904e-d77a-4016-a807-1f5d1bef6055.png)
+![image](https://user-images.githubusercontent.com/37409002/174189339-d0587ae3-ab41-4614-a408-ad97b5d67d7b.png)
 
 ### Browser: Brave
 ![image](https://user-images.githubusercontent.com/37409002/172706558-405d1cbe-f3d2-4d45-bbd1-6493aa0c73e3.png)
