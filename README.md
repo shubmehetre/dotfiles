@@ -14,4 +14,4 @@
 ![image](https://user-images.githubusercontent.com/37409002/174054338-88fcb089-15a6-45b3-8c30-134be06d23d2.png)
 
 ### Music: mpd + ncmpcpp
-![image](https://user-images.githubusercontent.com/37409002/174054585-f83b3e96-9011-42a0-82dc-6d7ae0c8a2ee.png)
+![image](https://user-images.githubusercontent.com/37409002/174396943-9b436e0b-2767-4663-abd7-274f827412cd.png)
