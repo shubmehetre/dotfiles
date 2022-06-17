@@ -52,3 +52,11 @@ writeCommonTags: couldn't write 'track' tag to 'hip-hop/eminem/Kamikaze_2018/Em 
 writeCommonTags: couldn't write 'track' tag to 'hip-hop/eminem/Kamikaze_2018/Good Guy (feat. Jessie Reyez)(Audio 320kbps) - Kamikaze.opus' as it's not a positive integer
 TagLib: Ogg::File::packet() -- Could not find the requested packet.
 TagLib: Opus::File::read() -- invalid Opus identification header
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
+TagLib: Could not open file /home/doom/zzz/songs/lol/remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus

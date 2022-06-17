@@ -15,7 +15,7 @@ env:
 # transparency/opacity
 window:
 
-  opacity: 0.85
+  opacity: 1
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -83,7 +83,7 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 5000
+  history: 10000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -117,7 +117,7 @@ scrolling:
 font:
     normal:
         family: "JetBrains Mono Nerd Font"
-        style: Regular
+        style: Medium
     bold:
         family: "JetBrains Mono Nerd Font"
         style: Bold
@@ -125,7 +125,7 @@ font:
         family: "JetBrains Mono Nerd Font"
         style: Italic
 # Point size
-    size: 8.0
+    size: 9.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -161,11 +161,9 @@ draw_bold_text_with_bright_colors: true
 
 # COLOR SCHEMES
 schemes:
-  # Dracula
   dracula: &dracula
-    colors:
       primary:
-        background: '#2596be'
+        background: '#282a36'
         foreground: '#ffffff'
       cursor:
         text: CellBackground
@@ -208,8 +206,81 @@ schemes:
         cyan:    '#59dffc'
         white:   '#e6e6d1'
 
+  # Tokyo Night colors
+  tokyo-night: &tokyo-night
+      primary:
+        background: '#24283b'
+        foreground: '#a9b1d6'
+      cursor:
+        text: CellBackground
+        cursor: CellForeground
+      vi_mode_cursor:
+        text: CellBackground
+        cursor: CellForeground
+      search:
+        matches:
+          foreground: '#44475a'
+          background: '#50fa7b'
+        focused_match:
+          foreground: '#44475a'
+          background: '#ffb86c'
+        bar:
+          background: '#282a36'
+          foreground: '#f8f8f2'
+      line_indicator:
+        foreground: None
+        background: None
+      selection:
+        text: CellForeground
+        background: '#44475a'
+      normal:
+        black:   '#32344a'
+        red:     '#f7768e'
+        green:   '#9ece6a'
+        yellow:  '#e0af68'
+        blue:    '#7aa2f7'
+        magenta: '#ad8ee6'
+        cyan:    '#449dab'
+        white:   '#787c99'
+      bright:
+        black:   '#444b6a'
+        red:     '#ff7a93'
+        green:   '#b9f27c'
+        yellow:  '#ff9e64'
+        blue:    '#7da6ff'
+        magenta: '#bb9af7'
+        cyan:    '#0db9d7'
+        white:   '#c0caf5'
+
+# Colors (Molokai Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#1B1D1E'
+#     foreground: '#F8F8F2'
+#   # Normal colors
+#   normal:
+#     black:   '#333333'
+#     red:     '#C4265E'
+#     green:   '#86B42B'
+#     yellow:  '#B3B42B'
+#     blue:    '#6A7EC8'
+#     magenta: '#8C6BC8'
+#     cyan:    '#56ADBC'
+#     white:   '#E3E3DD'
+#   # Bright colors
+#   bright:
+#     black:   '#666666'
+#     red:     '#F92672'
+#     green:   '#A6E22E'
+#     yellow:  '#E2E22E'
+#     blue:    '#819AFF'
+#     magenta: '#AE81FF'
+#     cyan:    '#66D9EF'
+#     white:   '#F8F8F2'
+
 # Choose ONE color scheme from those available in the above list.
-colors: *dracula
+colors: *tokyo-night
 
 # Visual Bell
 #
@@ -485,22 +556,23 @@ colors: *dracula
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
     # (Windows, Linux, and BSD only)
-  - { key: V,         mods: Control|Shift, action: Paste                       }
-  - { key: C,         mods: Control|Shift, action: Copy                        }
-  - { key: K,         mods: Alt,           action: ScrollLineUp                }
-  - { key: J,         mods: Alt,           action: ScrollLineDown              }
-  - { key: K,         mods: Control|Shift, action: IncreaseFontSize            }
-  - { key: J,         mods: Control|Shift, action: DecreaseFontSize            }
-  - { key: Insert,    mods: Shift,         action: PasteSelection              }
-  - { key: Key0,      mods: Control,       action: ResetFontSize               }
-  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
-  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
-  - { key: F11,       mods: None,          action: ToggleFullscreen            }
-  - { key: Paste,     mods: None,          action: Paste                       }
-  - { key: Copy,      mods: None,          action: Copy                        }
-  - { key: L,         mods: Control,       action: ClearLogNotice              }
-  - { key: L,         mods: Control,       chars: "\x0c"                       }
-  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
-  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
-  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
-  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+# - { key: Return,    mods: Control|Shift,    action: SpawnNewInstance            }
+  - { key: V,         mods: Control|Shift,    action: Paste                       }
+  - { key: C,         mods: Control|Shift,    action: Copy                        }
+  - { key: K,         mods: Alt,              action: ScrollLineUp                }
+  - { key: J,         mods: Alt,              action: ScrollLineDown              }
+  - { key: K,         mods: Control|Shift,    action: IncreaseFontSize            }
+  - { key: J,         mods: Control|Shift,    action: DecreaseFontSize            }
+  - { key: Insert,    mods: Shift,            action: PasteSelection              }
+  - { key: Key0,      mods: Control,          action: ResetFontSize               }
+  - { key: Plus,      mods: Control,          action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,          action: DecreaseFontSize            }
+  - { key: F11,       mods: None,             action: ToggleFullscreen            }
+  - { key: Paste,     mods: None,             action: Paste                       }
+  - { key: Copy,      mods: None,             action: Copy                        }
+  - { key: L,         mods: Control,          action: ClearLogNotice              }
+  - { key: L,         mods: Control,          chars: "\x0c"                       }
+  - { key: PageUp,    mods: None,             action: ScrollPageUp,   mode: ~Alt  }
+  - { key: PageDown,  mods: None,             action: ScrollPageDown, mode: ~Alt  }
+  - { key: Home,      mods: Shift,            action: ScrollToTop,    mode: ~Alt  }
+  - { key: End,       mods: Shift,            action: ScrollToBottom, mode: ~Alt  }

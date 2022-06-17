@@ -58,7 +58,7 @@ return packer.startup(function(use)
 --  use 'marko-cerovac/material.nvim'
     use 'bluz71/vim-moonfly-colors'
     use { 'akinsho/bufferline.nvim', disable = true, after = "nvim-web-devicons", config = "require('shub.config.bufferline')" }
-    use { 'norcalli/nvim-colorizer.lua', opt = true, config = "require('shub.config.colorizer')"}
+    use { 'norcalli/nvim-colorizer.lua', config = "require('shub.config.colorizer')"}
     use { 'lukas-reineke/indent-blankline.nvim', config = "require('shub.config.indent-blankline')" }
 
     -- Status ba

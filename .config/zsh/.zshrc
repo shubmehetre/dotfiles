@@ -8,6 +8,7 @@ export CLIKAN_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/clikan"
 autoload -U colors && colors	# Load colors
 ## PS1="%B%{$fg[black]%}[%{$fg[magenta]%}%n%{$fg[yellow]%}@%{$fg[magenta]%}%M %{$fg[black]%}%c%{$fg[black]%}]%{$reset_color%}$%b "
 PS1="%B%{$fg[black]%}[%{$fg[black]%}%c%{$fg[black]%}]%{$reset_color%} >%b "
+#PS1=" >%b "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
