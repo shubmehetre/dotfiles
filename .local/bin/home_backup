@@ -1,0 +1,24 @@
+#!/bin/env bash
+# Author: Shubham A. Mehetre
+
+# Get the model name for your HDD, and replace it here below
+GETPARTITION=$( lsblk -o KNAME,MODEL | rg -w 'ST1000LM024' | awk '{ print $1 }' )
+
+REMOTEPARTITION="/dev/${GETPARTITION}1"
+MOUNTPOINTDIR="/mnt"
+
+sudo mount $REMOTEPARTITION $MOUNTPOINTDIR 2>/dev/null
+
+if ! findmnt $MOUNTPOINTDIR >/dev/null; then
+	notify-send -u critical "rsync: WARNING" "Please connect hard disk for backup process"
+else
+	# full system sync
+	sudo rsync -aAXv --delete \
+		--exclude="/doom/cold_storage" \
+		--exclude="/doom/zzz" \
+		--exclude="/doom/Downloads" \
+		--exclude="/doom/.local/wallpapers" \
+		--exclude="/doom/.cache" \
+		--exclude="/doom/.config/BraveSoftware/*" \
+		/home/doom/ /mnt/home_backup
+fi
