@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/37409002/174189864-1802456f-dc18-4dfb-a23f-ec2bbe8b42e2.png)
 
 ### Feeds: NewsBoat
-![image](https://user-images.githubusercontent.com/37409002/174189924-f9ccd908-9af9-40fa-8b37-2f621dfbc058.png)
+![image](https://user-images.githubusercontent.com/37409002/174459032-5633c75c-6ed1-4af7-bd6c-20c53d34ef65.png)
 
 ### Mail Client: Thunderbird
 ![image](https://user-images.githubusercontent.com/37409002/174054338-88fcb089-15a6-45b3-8c30-134be06d23d2.png)
