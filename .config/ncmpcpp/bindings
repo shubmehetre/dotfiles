@@ -474,3 +474,6 @@ def_key "x"
   delete_playlist_items
 def_key "P"
   show_playlist
+# playlist rename => e
+# add to playlist => a
+#

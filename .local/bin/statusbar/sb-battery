@@ -23,7 +23,7 @@ for battery in /sys/class/power_supply/BAT?*; do
 	# Sets up the status and capacity
 	case "$(cat "$battery/status" 2>&1)" in
 		"Full") status="⚡" ;;
-		"Discharging") status="🔋" ;;
+		"Discharging") status="" ;;
 		"Charging") status="🔌" ;;
 		"Not charging") status="🛑" ;;
 		"Unknown") status="♻️" ;;
@@ -31,7 +31,7 @@ for battery in /sys/class/power_supply/BAT?*; do
 	esac
 	capacity="$(cat "$battery/capacity" 2>&1)"
 	# Will make a warn variable if discharging and low
-	[ "$status" = "🔋" ] && [ "$capacity" -le 30 ] && warn="❗" &&  notify-send -u critical "Warning!" "LOW BATTERY ------------------------------------------"
+	[ "$status" = "" ] && [ "$capacity" -le 30 ] && warn="❗" &&  notify-send -u critical "Warning!" "LOW BATTERY ------------------------------------------"
 
 	# notify when completly charged
 #	[ "$status" = "🔌" ] && [ "$capacity" -ge 80 ] &&  notify-send "Enough Juice😊" "Unplug the charger -----------------------------------------------------------------"

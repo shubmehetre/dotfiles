@@ -90,6 +90,9 @@ alias rack="ssh root@23.234.228.169"
 # rsync to webserver
 alias syncsite="hugo ; rsync -rtvzP ./public/ root@23.234.228.169:/var/www/smehetre --delete"
 
+# mpd restart
+alias mpdr="systemctl --user restart mpd.service"
+
 # fzf
 
 ffc() { du -a $HOME/.config $HOME/.local/bin \

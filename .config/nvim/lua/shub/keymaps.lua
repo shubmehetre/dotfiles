@@ -14,6 +14,8 @@ vim.g.maplocalleader = " "
 
 -- some utilily maps
 map("n", "<C-s>", ":w<CR>", opts)
+-- control backspace to Delete previous word
+map('i', '<C-H>', '<C-W>', opts)
 
 -- save file as sudo on files that require root permission
 -- map("c", "w!!", "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!", opts)

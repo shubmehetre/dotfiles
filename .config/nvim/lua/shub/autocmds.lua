@@ -1,6 +1,27 @@
 local autocmd = vim.api.nvim_create_autocmd
 local keymap = vim.api.nvim_buf_set_keymap
 
+-- run python code
+vim.api.nvim_create_autocmd('FileType',
+    {
+        pattern = { "python" },
+        callback = function()
+            vim.cmd [[
+                nnoremap <silent> <buffer> <leader>r :term python3 %<CR> :startinsert<CR>
+            ]]
+        end,
+})
+
+vim.api.nvim_create_autocmd('FileType',
+    {
+        pattern = { "sh" },
+        callback = function()
+            vim.cmd [[
+                nnoremap <silent> <buffer> <leader>r :term bash %<CR> :startinsert<CR>
+            ]]
+        end,
+})
+
 -- clean terminal
 autocmd('TermOpen',
     {
@@ -63,4 +84,8 @@ augroup end
 -- make dwm after config is edited
 vim.cmd ([[
 	autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install; notify-send "dwm : Logout to see changes"
+]])
+-- make dwmblocks after config is edited
+vim.cmd ([[
+	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install; notify-send "dwmblocks : Logout to see changes"
 ]])

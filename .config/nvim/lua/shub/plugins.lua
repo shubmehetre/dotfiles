@@ -54,7 +54,9 @@ return packer.startup(function(use)
     use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
 
     -- Look n Feel
-    use 'folke/tokyonight.nvim' -- theme
+    use 'folke/tokyonight.nvim'
+    use 'Mofiqul/dracula.nvim'
+
 --  use 'marko-cerovac/material.nvim'
     use 'bluz71/vim-moonfly-colors'
     use { 'akinsho/bufferline.nvim', disable = true, after = "nvim-web-devicons", config = "require('shub.config.bufferline')" }
@@ -104,6 +106,7 @@ return packer.startup(function(use)
     -- utils
     use { 'ggandor/lightspeed.nvim' } -- type 's' to search instead of '/'
     use { 'numToStr/Comment.nvim', config = "require('shub.config.comment')" }
+    use { 'ahmedkhalf/project.nvim', config = "require('shub.config.project')" }
     -- use { 'Djancyp/cheat-sheet' }
     use { 'RishabhRD/nvim-cheat.sh' }
     use { 'RishabhRD/popfix' }

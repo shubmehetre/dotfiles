@@ -23,6 +23,7 @@ local options = {
     showtabline = 1,
     smartcase = true,                        -- smart case
     smartindent = true,                      -- make indenting smarter again
+--  autoindent = true,
     scrolloff = 6,                           -- prevent ctrl-u and ctrl-d from keeping your cursor top or bottom
     sidescrolloff = 8,
     splitbelow = true,                       -- force all horizontal splits to go below current window

@@ -15,7 +15,7 @@ env:
 # transparency/opacity
 window:
 
-  opacity: 1
+  opacity: .8
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -83,7 +83,7 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 100000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -117,7 +117,7 @@ scrolling:
 font:
     normal:
         family: "JetBrains Mono Nerd Font"
-        style: Medium
+        style: Regular
     bold:
         family: "JetBrains Mono Nerd Font"
         style: Bold
@@ -206,7 +206,6 @@ schemes:
         cyan:    '#59dffc'
         white:   '#e6e6d1'
 
-  # Tokyo Night colors
   tokyo-night: &tokyo-night
       primary:
         background: '#24283b'
@@ -252,32 +251,31 @@ schemes:
         cyan:    '#0db9d7'
         white:   '#c0caf5'
 
-# Colors (Molokai Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#1B1D1E'
-#     foreground: '#F8F8F2'
-#   # Normal colors
-#   normal:
-#     black:   '#333333'
-#     red:     '#C4265E'
-#     green:   '#86B42B'
-#     yellow:  '#B3B42B'
-#     blue:    '#6A7EC8'
-#     magenta: '#8C6BC8'
-#     cyan:    '#56ADBC'
-#     white:   '#E3E3DD'
-#   # Bright colors
-#   bright:
-#     black:   '#666666'
-#     red:     '#F92672'
-#     green:   '#A6E22E'
-#     yellow:  '#E2E22E'
-#     blue:    '#819AFF'
-#     magenta: '#AE81FF'
-#     cyan:    '#66D9EF'
-#     white:   '#F8F8F2'
+  molokai: &molokai
+    # Default colors
+    primary:
+      background: '#1B1D1E'
+      foreground: '#F8F8F2'
+    # Normal colors
+    normal:
+      black:   '#333333'
+      red:     '#C4265E'
+      green:   '#86B42B'
+      yellow:  '#B3B42B'
+      blue:    '#6A7EC8'
+      magenta: '#8C6BC8'
+      cyan:    '#56ADBC'
+      white:   '#E3E3DD'
+    # Bright colors
+    bright:
+      black:   '#666666'
+      red:     '#F92672'
+      green:   '#A6E22E'
+      yellow:  '#E2E22E'
+      blue:    '#819AFF'
+      magenta: '#AE81FF'
+      cyan:    '#66D9EF'
+      white:   '#F8F8F2'
 
 # Choose ONE color scheme from those available in the above list.
 colors: *tokyo-night
