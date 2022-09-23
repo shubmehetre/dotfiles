@@ -13,7 +13,7 @@
   <setting name="dock-history-minimized" type="System.Boolean">False</setting>
   <setting name="statusbar-shown" type="System.Boolean">True</setting>
   <setting name="toolbox-shown" type="System.Boolean">True</setting>
-  <setting name="last-selected-tool" type="System.String">PaintBrushTool</setting>
+  <setting name="last-selected-tool" type="System.String">MoveSelectedTool</setting>
   <setting name="primary-color" type="System.String">FF262A29</setting>
   <setting name="secondary-color" type="System.String">FFFFFFFF</setting>
   <setting name="recently-used-colors" type="System.String">FF262A29,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5</setting>

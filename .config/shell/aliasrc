@@ -85,10 +85,10 @@ alias anon="mpv /home/doom/zzz/songs/focus/Programming\ _\ Coding\ _\ Hacking\ m
 alias xclip="xclip -selection clipboard"
 
 # webserver : racknerd.com
-alias rack="ssh root@23.234.228.169"
+alias rack="ssh root@216.127.171.229"
 
 # rsync to webserver
-alias syncsite="hugo ; rsync -rtvzP ./public/ root@23.234.228.169:/var/www/smehetre --delete"
+alias syncsite="hugo ; rsync -rtvzP ./public/ root@216.127.171.229:/var/www/shubmehetre --delete"
 
 # mpd restart
 alias mpdr="systemctl --user restart mpd.service"
