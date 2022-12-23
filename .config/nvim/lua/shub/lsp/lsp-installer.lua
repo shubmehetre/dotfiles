@@ -4,12 +4,8 @@ if not status_ok then
 end
 
 local servers = {
-  "cssls",
-  "cssmodules_ls",
-  "html",
-  -- "jdtls",
-  "jsonls",
   "pyright",
+  "clangd"
 }
 
 local settings = {
@@ -54,12 +50,12 @@ for _, server in pairs(servers) do
     on_attach = require("shub.lsp.handlers").on_attach,
     capabilities = require("shub.lsp.handlers").capabilities,
   }
-
+--[[
   if server == "jsonls" then
     local jsonls_opts = require "shub.lsp.servers.jsonls"
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
   end
-
+]]
   if server == "pyright" then
     local pyright_opts = require "shub.lsp.servers.pyright"
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)

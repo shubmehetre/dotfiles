@@ -68,7 +68,7 @@ alias \
 alias joplin="$HOME/.local/bin/joplin/Joplin.AppImage"
 
 # mount sdb1
-alias cold="mount /dev/sdb1 $HOME/cold_storage/"
+alias cold="mount /dev/sdb1 $HOME/external/oldie/"
 alias ucold="umount -l /dev/sdb1"
 
 # unmute

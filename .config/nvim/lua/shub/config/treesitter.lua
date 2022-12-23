@@ -4,8 +4,9 @@ if not status_ok then
 end
 
 ts.setup {
-  ensure_installed = {"c", "python", "lua", "html"},
+  ensure_installed = { "c", "python", "cpp"},
   sync_install = false,
+  auto_install = true,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension

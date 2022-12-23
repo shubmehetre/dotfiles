@@ -10,6 +10,10 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- disable netrw at the very start of your init.lua (strongly advised)
+-- vim.g.loaded = 1
+-- vim.g.loaded_netrwPlugin = 1
+
 nvim_tree.setup {
     renderer = {
 --      add_trailing = false,
@@ -117,7 +121,7 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
+--  height = 30,
     hide_root_folder = false,
     side = "left",
     -- auto_resize = true,

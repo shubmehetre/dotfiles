@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd('FileType',
             ]]
         end,
 })
---
+
 -- run C code
 vim.api.nvim_create_autocmd('FileType',
     {
@@ -19,6 +19,17 @@ vim.api.nvim_create_autocmd('FileType',
         callback = function()
             vim.cmd [[
                 nnoremap <silent> <buffer> <leader>r :term gcc %
+            ]]
+        end,
+})
+
+-- run cpp code
+vim.api.nvim_create_autocmd('FileType',
+    {
+        pattern = { "cpp" },
+        callback = function()
+            vim.cmd [[
+            nnoremap <silent> <buffer> <leader>r :term g++ % && ./a.out<CR>i
             ]]
         end,
 })

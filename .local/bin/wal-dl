@@ -28,7 +28,7 @@ max_pages=4
 # sorting : date_added, relevance, random, views, favorites, toplist
 sorting=relevance
 # quality : large original small
-quality=large
+quality=original
 # atleast : least res
 atleast=1920x1080
 
