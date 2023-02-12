@@ -14,6 +14,7 @@ vv="cd /home/doom/Videos && ls -a" \
 nbd="cd /home/doom/.local/share/newsboat/nb_downloads/ && ls -a" \
 songs="cd /home/doom/zzz/songs/ && ls -a" \
 nv="cd /home/doom/.config/nvim/ && ls -a" \
+wallp="cd /home/doom/.local/share/wallpapers/ && ls -a" \
 bf="$EDITOR /home/doom/.config/shell/bm-files" \
 bd="$EDITOR /home/doom/.config/shell/bm-dirs" \
 cfx="$EDITOR /home/doom/.config/x11/xresources" \

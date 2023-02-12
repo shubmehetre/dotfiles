@@ -14,3 +14,4 @@ vv  ${XDG_VIDEOS_DIR:-$HOME/Videos}
 nbd $HOME/.local/share/newsboat/nb_downloads/
 songs $HOME/zzz/songs/
 nv $HOME/.config/nvim/
+wallp $HOME/.local/share/wallpapers/

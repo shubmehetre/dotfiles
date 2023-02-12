@@ -84,8 +84,8 @@ alias anon="mpv /home/doom/zzz/songs/focus/Programming\ _\ Coding\ _\ Hacking\ m
 # xclip: always get contents in clipboard
 alias xclip="xclip -selection clipboard"
 
-# webserver : racknerd.com
-alias rack="ssh root@216.127.171.229"
+# webserver : racknerd.com. REVOKED
+# alias rack="ssh root@216.127.171.229"
 
 # rsync to webserver
 alias syncsite="hugo ; rsync -rtvzP ./public/ root@216.127.171.229:/var/www/shubmehetre --delete"

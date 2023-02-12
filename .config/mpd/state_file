@@ -2,8 +2,8 @@ sw_volume: 98
 audio_device_state:1:Pipewire Sound Server
 audio_device_state:1:Visualizer feed
 state: pause
-current: 1
-time: 0.754000
+current: 0
+time: 25.045000
 random: 0
 repeat: 1
 single: 0
@@ -12,89 +12,5 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:playlists/focus/Kryptic Minds  - Can't Sleep ( Full Album ).opus
-1:playlists/focus/Kryptic Minds - One Of Us (Album).opus
-2:playlists/chill_lofi/J. COLE 1 HOUR CHILL SONGS (2021).opus
-3:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Asha Bhosle, Mohammed Rafi - O Mere Sona Re Sona.webm
-4:podcasts/theknowledgeproject/Episode_141_Kunal_Shah.mp3
-5:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Hemant Kumar - Yeh Raat Yeh Chandni.webm
-6:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Kanchan, Amit Kumar - Laila O Laila - Qurbani # Soundtrack Version.webm
-7:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Kishore Kumar - Kehna Hai Kehna Hai (From #Padosan#).webm
-8:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Kishore Kumar - O Saathi Re - Male Vocals.webm
-9:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Kishore Kumar, Asha Bhosle - Yeh Raaten Yeh Mausam (From #Dilli Ka Thug#).webm
-10:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Kishore Kumar, Asha Bhosle - Yeh Vaada Raha - Yeh Vaada Raha # Soundtrack Version.webm
-11:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Kishore Kumar, Lata Mangeshkar - Aaj Madhosh Hua Jaye Re.webm
-12:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Lata Mangeshkar - Ajib Dastan Hai Yeh (From #Dil Apna Aur Preet Parai#).webm
-13:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Lata Mangeshkar, Hemant Kumar - Tumhen Yaad Hoga Kabhi Hum Mile The.webm
-14:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Lata Mangeshkar, Kishore Kumar - Kya Yahi Pyar Hai - From #Rocky#.webm
-15:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - Aasman Se Aaya Farishta.webm
-16:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - Dil Ke Jharokhe Mein.webm
-17:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - Gulabi Ankhen - From #The Train#.webm
-18:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - Jaan Pehechaan Ho.webm
-19:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - Likhe Jo Khat Tujhe (From #Kanyadaan#).webm
-20:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - Mujhe Duniyawalo Sharabi Na Samjho.webm
-21:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi - O Meri Mehbooba Mehbooba Mehbooba.webm
-22:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mohammed Rafi, Kishore Kumar - Salamat Rahe Dostana Hamara (Part I) - From 'Dostana' # Soundtrack Version.webm
-23:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mukesh - Dum Dum Diga Diga.webm
-24:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mukesh - Kisi Ki Muskurahaton Se.webm
-25:playlists/retro_bollywood/Old is Gold - Retro Bollywood/Mukesh - Main Pal Do Pal Ka Shair Hoon.webm
-26:playlists/Core/21 Savage, Metro Boomin - No Heart.mp3
-27:playlists/The_Hood/Travis Scott - goosebumps.mp3
-28:playlists/The_Hood/Easturn Vantage, Freddie Gibbs, 2Pac, RZA - Built for This.mp3
-29:playlists/The_Hood/Method Man, Redman, Saukrates - A-YO.mp3
-30:playlists/Bandana_GAnG/Seedhe Maut - 101.mp3
-31:playlists/The_Hood/Travis Scott - BUTTERFLY EFFECT.mp3
-32:playlists/The_Hood/2Pac - Ambitionz Az A Ridah.mp3
-33:playlists/The_Hood/Tyga - Ice Cream Man (Audio) [rwSB4T97xt0].opus
-34:playlists/The_Hood/J. Cole - No Role Modelz.mp3
-35:playlists/The_Hood/Dr. Dre, Hittman - Big Ego's.mp3
-36:remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
-37:playlists/The_Hood/Travis Scott - STARGAZING.mp3
-38:playlists/The_Hood/Travis Scott - YOSEMITE.mp3
-39:playlists/The_Hood/Joyner Lucas - Revenge.mp3
-40:playlists/The_Hood/Post Malone, Ty Dolla #ign - Psycho (feat. Ty Dolla #ign).mp3
-41:playlists/The_Hood/Travis Scott - Antidote.mp3
-42:playlists/The_Hood/Eminem, Royce Da 5'9# - Not Alike (feat. Royce Da 5'9).mp3
-43:playlists/The_Hood/Travis Scott - HIGHEST IN THE ROOM.mp3
-44:hip-hop/eminem/Kamikaze_2018/Lucky You feat. Joyner Lucas.opus
-45:hip-hop/eminem/Marshall_Mathers_LP_2000/Bitch Please II.opus
-46:hip-hop/eminem/Slim_Shady_LP_1999/Eminem - My Fault-_ZQYIYNqU2M.m4a
-47:playlists/The_Hood/Xzibit, Eminem, Nate Dogg - My Name (feat. Eminem & Nate Dogg).mp3
-48:playlists/Core/Akon, Eminem - Smack That.mp3
-49:playlists/Core/Akon - Don't Matter.mp3
-50:playlists/Bandana_GAnG/DIVINE, Sikander Kahlon - Bandana Gang.mp3
-51:playlists/Bandana_GAnG/Seedhe Maut - Do Guna.mp3
-52:playlists/Bandana_GAnG/DIVINE - 3#59 AM.mp3
-53:playlists/Bandana_GAnG/DIVINE, Sikander Kahlon - Bandana Gang.mp3
-54:playlists/Bandana_GAnG/DIVINE, Aavrutti, D'Evil, Shah Rule - Vibe Hai.mp3
-55:playlists/The_Hood/Snoop Dogg, Master P, Nate Dogg, Butch Cassidy, Tha Eastsidaz - Lay Low.mp3
-56:playlists/The_Hood/JAY-Z, Swizz Beatz - On To The Next One.mp3
-57:playlists/The_Hood/Tyga - Ice Cream Man (Audio) [rwSB4T97xt0].opus
-58:playlists/The_Hood/Tyga, The Game - Switch Lanes.mp3
-59:playlists/The_Hood/G-Eazy, Yo Gotti, YBN Nahmir - 1942 (feat. Yo Gotti & YBN Nahmir).mp3
-60:playlists/The_Hood/G-Eazy, Halsey - Him & I (with Halsey).mp3
-61:playlists/The_Hood/G-Eazy, A#AP Rocky, Cardi B - No Limit.mp3
-62:playlists/The_Hood/G-Eazy, Blueface - West Coast.mp3
-63:playlists/The_Hood/G-Eazy, Bebe Rexha - Me, Myself & I.mp3
-64:playlists/Bandana_GAnG/Fotty Seven - Gooda.mp3
-65:playlists/Core/Justin Timberlake, JAY-Z - Suit & Tie (feat. Jay-Z).mp3
-66:playlists/The_Hood/JAY-Z, Linkin Park - Dirt off Your Shoulder # Lying From You.mp3
-67:playlists/The_Hood/JAY-Z, Linkin Park - Numb # Encore.mp3
-68:playlists/The_Hood/JAY-Z - 99 Problems.mp3
-69:playlists/The_Hood/JAY-Z - Hard Knock Life (Ghetto Anthem).mp3
-70:playlists/The_Hood/JAY-Z - Dirt Off Your Shoulder.mp3
-71:playlists/The_Hood/JAY-Z, Kanye West - Ni##as In Paris.mp3
-72:remix/2Pac ft. Method Man & Ice Cube - Thug Nation (ft. Eazy E)-MWjVlMwfPxw.opus
-73:remix/Eminem, Offset, Tyga, Metro Boomin - 'Ric Flair Drip x Dubai Drip' Nitin Randhawa Remix.opus
-74:remix/Method Man, 2Pac, Ice Cube, Eazy E - Built For This feat Freddie Gibbs  [HD]-U-dwjybcAZw.m4a
-75:remix/N.W.A., Eazy-E, Dr. Dre, 2Pac and Eminem - BIG EGOS.opus
-76:hip-hop/kdot/good kid, m.A.A.d city/08-m.A.A.d city.opus
-77:playlists/The_Hood/Kendrick Lamar - DNA..mp3
-78:playlists/The_Hood/Kendrick Lamar - HUMBLE..mp3
-79:playlists/The_Hood/Alright.opus
-80:playlists/The_Hood/Uproar.opus
-81:playlists/Bandana_GAnG/DIVINE - Punya Paap.mp3
-82:playlists/The_Hood/Geto Boys - Mind Playing Tricks on Me.mp3
-83:playlists/The_Hood/Ice Cube - Why We Thugs.mp3
-84:playlists/focus/Phonk Music 2022 ※ Aggressive Drift Phonk ※ Фонка (MIDNIGHT ⧸ Sahara ⧸ NEON BLADE ⧸ Close Eyes ).opus
+0:playlists/focus/Kryptic Minds - One Of Us (Album).opus
 playlist_end

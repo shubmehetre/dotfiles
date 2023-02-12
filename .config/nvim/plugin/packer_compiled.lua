@@ -130,10 +130,13 @@ _G.packer_plugins = {
     path = "/home/doom/.local/share/nvim/site/pack/packer/opt/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["dracula.nvim"] = {
+  ["feline.nvim"] = {
+    config = { "require('shub.config.feline')" },
+    load_after = {},
     loaded = true,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/start/dracula.nvim",
-    url = "https://github.com/Mofiqul/dracula.nvim"
+    needs_bufread = false,
+    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
   },
   ["friendly-snippets"] = {
     load_after = {},
@@ -163,14 +166,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doom/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
-  },
-  ["lualine.nvim"] = {
-    config = { "require('shub.config.lualine')" },
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/home/doom/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["null-ls.nvim"] = {
     config = { "require('shub.lsp.null-ls')" },
@@ -225,7 +220,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    after = { "lualine.nvim" },
+    after = { "feline.nvim" },
     config = { "require('shub.config.devicons')" },
     load_after = {},
     loaded = true,
@@ -309,22 +304,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('shub.config.colorizer')
-time([[Config for nvim-colorizer.lua]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 require('shub.config.indent-blankline')
 time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('shub.config.treesitter')
-time([[Config for nvim-treesitter]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('shub.config.gitsigns')
-time([[Config for gitsigns.nvim]], false)
 -- Config for: symbols-outline.nvim
 time([[Config for symbols-outline.nvim]], true)
 require('shub.config.symbols-outline')
@@ -333,47 +316,59 @@ time([[Config for symbols-outline.nvim]], false)
 time([[Config for null-ls.nvim]], true)
 require('shub.lsp.null-ls')
 time([[Config for null-ls.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('shub.config.telescope')
-time([[Config for telescope.nvim]], false)
 -- Config for: project.nvim
 time([[Config for project.nvim]], true)
 require('shub.config.project')
 time([[Config for project.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require('shub.config.comment')
-time([[Config for Comment.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('shub.config.nvim-tree')
 time([[Config for nvim-tree.lua]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require('shub.config.comment')
+time([[Config for Comment.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('shub.config.telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('shub.config.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('shub.config.treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('shub.config.gitsigns')
+time([[Config for gitsigns.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-cmp ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd nvim-autopairs ]]
+
+-- Config for: nvim-autopairs
+require('shub.config.autopairs')
+
+vim.cmd [[ packadd cmp-nvim-lua ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd friendly-snippets ]]
+vim.cmd [[ packadd cmp_luasnip ]]
 vim.cmd [[ packadd plenary.nvim ]]
 vim.cmd [[ packadd nvim-web-devicons ]]
 
 -- Config for: nvim-web-devicons
 require('shub.config.devicons')
 
-vim.cmd [[ packadd lualine.nvim ]]
+vim.cmd [[ packadd feline.nvim ]]
 
--- Config for: lualine.nvim
-require('shub.config.lualine')
+-- Config for: feline.nvim
+require('shub.config.feline')
 
-vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd nvim-autopairs ]]
-
--- Config for: nvim-autopairs
-require('shub.config.autopairs')
-
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd friendly-snippets ]]
-vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd cmp-nvim-lua ]]
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-buffer ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

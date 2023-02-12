@@ -48,26 +48,28 @@ packer.init {
 return packer.startup(function(use)
 
     -- must have
- use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules
- use 'wbthomason/packer.nvim' -- Have packer manage itself
- use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
- use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
+    use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules
+    use 'wbthomason/packer.nvim' -- Have packer manage itself
+    use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
+    use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
     use {  'kyazdani42/nvim-web-devicons', after = "plenary.nvim", config = "require('shub.config.devicons')" }
+
+--     -- Status bar
+--  use { 'nvim-lualine/lualine.nvim', after = "nvim-web-devicons", config = "require('shub.config.lualine')" }
+    use { 'feline-nvim/feline.nvim', after = "nvim-web-devicons", config = "require('shub.config.feline')" }
 
     -- Look n Feel
     use 'folke/tokyonight.nvim'
-    use 'Mofiqul/dracula.nvim'
---  use 'marko-cerovac/material.nvim'
---  use 'bluz71/vim-moonfly-colors'
-
---  use { 'akinsho/bufferline.nvim', disable = true, after = "nvim-web-devicons", config = "require('shub.config.bufferline')" }
+--     use 'Mofiqul/dracula.nvim'
+-- --  use 'marko-cerovac/material.nvim'
+-- --  use 'bluz71/vim-moonfly-colors'
+--
+-- --  use { 'akinsho/bufferline.nvim', disable = true, after = "nvim-web-devicons", config = "require('shub.config.bufferline')" }
     use { 'norcalli/nvim-colorizer.lua', config = "require('shub.config.colorizer')"}
     use { 'lukas-reineke/indent-blankline.nvim', config = "require('shub.config.indent-blankline')" }
-
-    -- Status ba
-    use { 'nvim-lualine/lualine.nvim', after = "nvim-web-devicons", config = "require('shub.config.lualine')" }
-
-
+--
+--
+--
     -- cmp
     use 'hrsh7th/nvim-cmp'
     use {
