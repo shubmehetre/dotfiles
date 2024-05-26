@@ -37,5 +37,5 @@ for battery in /sys/class/power_supply/BAT?*; do
 #	[ "$status" = "🔌" ] && [ "$capacity" -ge 80 ] &&  notify-send "Enough Juice😊" "Unplug the charger -----------------------------------------------------------------"
 
 	# Prints the info
-	printf "| %s%s%d%% |" "$status" "$warn" "$capacity"; unset warn
+	printf "| %s%s%d%%" "$status" "$warn" "$capacity"; unset warn
 done && printf "\\n"
