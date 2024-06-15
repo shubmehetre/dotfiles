@@ -21,7 +21,7 @@ walldir="$HOME/.local/share/wallpapers/wallhaven"
 # the dir used to cache thumbnails
 cachedir="$HOME/.cache/wallhaven"
 # sxiv options
-sxiv_otps=" -tfpo -z 200" # o is needed for selection
+nsxiv_otps=" -tfpo -z 200" # o is needed for selection
 # number of pages to show in search results
 # each page contains 24 results
 max_pages=4
@@ -70,7 +70,7 @@ dep_ck () {
 		command -v $pr >/dev/null 2>&1 || sh_info "command $pr not found, install: $pr" 1
 	done
 }
-dep_ck "sxiv" "curl" "jq"
+dep_ck "nsxiv" "curl" "jq"
 
 
 # clean up command that would be called when the program exits
@@ -138,7 +138,7 @@ done | curl -Z -K -
 ###########################
 
 # extract the id's out of the thumbnail name
-image_ids="$(sxiv $sxiv_otps "$cachedir")"
+image_ids="$(nsxiv $nsxiv_otps "$cachedir")"
 [ -z "$image_ids" ] && exit
 
 #########################
@@ -158,4 +158,4 @@ do
 done | curl -K -
 
 sh_info "wallpapers downloaded in:- '$walldir'"
-sxiv $(ls -c)
+nsxiv $(ls -c)
