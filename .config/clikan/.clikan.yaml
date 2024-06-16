@@ -1,8 +1,0 @@
-clikan_data: /home/doom/.config/clikan/.clikan.dat
-
-limits:
-  todo: 10
-  wip: 4
-  done: 10
-
-repaint: true
