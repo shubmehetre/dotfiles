@@ -5,7 +5,7 @@ ncmpcpp_directory = "~/.config/ncmpcpp"
 lyrics_directory = "~/.local/share/lyrics"
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_music_dir = "~/zzz/songs/"
+mpd_music_dir = "~/lala/sync/Music"
 
 message_delay_time = "1"
 visualizer_type = "spectrum"

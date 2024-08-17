@@ -14,7 +14,7 @@ unsetopt PROMPT_SP
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="brave"
+export BROWSER="librewolf"
 
 # java and maven
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"

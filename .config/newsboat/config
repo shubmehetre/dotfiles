@@ -41,7 +41,7 @@ color info 			        white 	    black 	    bold
 color article 			    default 	default
 
 #browser w3m
-browser qutebrowser
+browser brave
 macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser w3m
 macro a set browser "tsp yt-dlp --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser w3m
