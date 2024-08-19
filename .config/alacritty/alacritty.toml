@@ -60,15 +60,15 @@ TERM = "xterm-256color"
 size = 10.0
 
 [font.bold]
-family = "JetBrains Mono Nerd Font"
+family = "DejaVuSansMNerdFont"
 style = "Bold"
 
 [font.italic]
-family = "JetBrains Mono Nerd Font"
+family = "DejaVuSansMNerdFont"
 style = "Italic"
 
 [font.normal]
-family = "JetBrains Mono Nerd Font"
+family = "DejaVuSansMNerdFont"
 style = "Regular"
 
 [[keyboard.bindings]]

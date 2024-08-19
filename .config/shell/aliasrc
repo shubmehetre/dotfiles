@@ -7,62 +7,64 @@
 [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
 
 # sudo not required for some system commands
-for command in mount umount sv pacman updatedb su ; do
-	alias $command="sudo $command"
-done; unset command
+for command in mount umount sv pacman updatedb su; do
+  alias $command="sudo $command"
+done
+unset command
 
 # autoremove
 # alias cleanup="pacman -R --noconfirm $(pacman -Qdtq)"
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -v" \
-	mv="mv -v" \
-	rm="rm -v" \
-	bc="bc -ql" \
-	mkd="mkdir -pv" \
-	yt="yt-dlp --add-metadata -i" \
-	yta="yt -x -f bestaudio/best -o '%(title)s.%(ext)s'" \
-	ytao="yt -x -f bestaudio/best -o '%(playlist_index)s-%(title)s.%(ext)s'" \
-	ffmpeg="ffmpeg -hide_banner"
+  cp="cp -v" \
+  mv="mv -v" \
+  rm="rm -v" \
+  bc="bc -ql" \
+  mkd="mkdir -pv" \
+  yt="yt-dlp --add-metadata -i" \
+  yta="yt -x -f bestaudio/best -o '%(title)s.%(ext)s'" \
+  ytao="yt -x -f bestaudio/best -o '%(playlist_index)s-%(title)s.%(ext)s'" \
+  ffmpeg="ffmpeg -hide_banner" \
+  kindle_mount="mount -o rw,user,uid=1000,gid=998,umask=007,exec"
 
 # Colorize commands when possible.
 alias \
-	ls="exa -h --color=auto --group-directories-first" \
-	l="exa	-al --color=auto --group-directories-first" \
-	ll="exa	-al --color=auto --group-directories-first" \
-	lll="exa -al --color=auto --group-directories-first" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
+  ls="exa -h --color=auto --group-directories-first" \
+  l="exa	-al --color=auto --group-directories-first" \
+  ll="exa	-al --color=auto --group-directories-first" \
+  lll="exa -al --color=auto --group-directories-first" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi"
 
 # These common commands are just too long! Abbreviate them.
 alias \
-	ka="killall" \
-	gs="git status" \
-	ga="git commit -a" \
-	gp="git push" \
-	trem="transmission-remote" \
-	YT="youtube-viewer" \
-	sdn="sudo shutdown -h now" \
-	e="$EDITOR" \
-	v="$EDITOR" \
-	p="sudo pacman" \
-	xi="sudo xbps-install" \
-	xr="sudo xbps-remove -R" \
-	xq="xbps-query" \
-	z="zathura" \
-	cca="clikan add" \
-	ccs="clikan show" \
-	ccd="clikan delete" \
-	ccp="clikan promote"
+  ka="killall" \
+  gs="git status" \
+  ga="git commit -a" \
+  gp="git push" \
+  trem="transmission-remote" \
+  YT="youtube-viewer" \
+  sdn="sudo shutdown -h now" \
+  e="$EDITOR" \
+  v="$EDITOR" \
+  p="sudo pacman" \
+  xi="sudo xbps-install" \
+  xr="sudo xbps-remove -R" \
+  xq="xbps-query" \
+  z="zathura" \
+  cca="clikan add" \
+  ccs="clikan show" \
+  ccd="clikan delete" \
+  ccp="clikan promote"
 
 alias \
-	magit="nvim -c MagitOnly" \
-	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
-	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
+  magit="nvim -c MagitOnly" \
+  ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
+  weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
 # remaps script
-	remaps="source $HOME/.config/bin/remaps"
+remaps="source $HOME/.config/bin/remaps"
 
 # Joplin appimg
 alias joplin="$HOME/.local/bin/joplin/Joplin.AppImage"
@@ -96,12 +98,12 @@ alias mpdr="systemctl --user restart mpd.service"
 # fzf
 
 ffc() { du -a $HOME/.config $HOME/.local/bin \
-	--exclude '.config/libreoffice' \
-	--exclude '.config/BraveSoftware' \
-	--exclude '.config/@joplin' \
-	--exclude '.config/nvim/plugged' \
-	--exclude '.config/JetBrains' \
-	--exclude '.config/joplin-desktop' \
-	| awk '{print $2}' | fzf | xargs -r $EDITOR ; }
+  --exclude '.config/libreoffice' \
+  --exclude '.config/BraveSoftware' \
+  --exclude '.config/@joplin' \
+  --exclude '.config/nvim/plugged' \
+  --exclude '.config/JetBrains' \
+  --exclude '.config/joplin-desktop' |
+  awk '{print $2}' | fzf | xargs -r $EDITOR; }
 
-ff() { fzf | xargs -r -I {} $EDITOR {} ; }
+ff() { fzf | xargs -r -I {} $EDITOR {}; }
