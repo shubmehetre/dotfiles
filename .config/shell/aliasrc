@@ -23,10 +23,10 @@ alias \
   bc="bc -ql" \
   mkd="mkdir -pv" \
   yt="yt-dlp --add-metadata -i" \
-  yta="yt -x -f bestaudio/best -o '%(title)s.%(ext)s'" \
+  yta="yt -x --audio-format opus --cookies-from-browser brave -f bestaudio/best -o '%(title)s.%(ext)s'" \
   ytao="yt -x -f bestaudio/best -o '%(playlist_index)s-%(title)s.%(ext)s'" \
   ffmpeg="ffmpeg -hide_banner" \
-  kindle_mount="mount -o rw,user,uid=1000,gid=998,umask=007,exec"
+  kindle_mount="mount -o rw,user,uid=1000,gid=998,umask=007"
 
 # Colorize commands when possible.
 alias \
@@ -77,20 +77,22 @@ alias ucold="umount -l /dev/sdb1"
 alias unmute="amixer sset Master unmute"
 
 # play music
-alias hood="mpv --shuffle /home/doom/zzz/songs/playlists/The_Hood/ --no-video"
-alias home="mpv --shuffle /home/doom/zzz/songs/playlists/Home/"
-alias gully="mpv --shuffle /home/doom/zzz/songs/playlists/Bandana_GAnG/"
-alias focus="mpv --shuffle /home/doom/zzz/songs/focus/"
-alias anon="mpv /home/doom/zzz/songs/focus/Programming\ _\ Coding\ _\ Hacking\ music\ vol.18\ \(ANONYMOUS\ HEADQUARTERS\)-Z-VfaG9ZN_U.opus"
+alias \
+  hood="mpv --shuffle /home/doom/zzz/songs/playlists/The_Hood/ --no-video" \
+  home="mpv --shuffle /home/doom/zzz/songs/playlists/Home/" \
+  gully="mpv --shuffle /home/doom/zzz/songs/playlists/Bandana_GAnG/" \
+  focus="mpv --shuffle /home/doom/zzz/songs/focus/" \
+  anon="mpv /home/doom/zzz/songs/focus/Programming\ _\ Coding\ _\ Hacking\ music\ vol.18\ \(ANONYMOUS\ HEADQUARTERS\)-Z-VfaG9ZN_U.opus"
 
 # xclip: always get contents in clipboard
 alias xclip="xclip -selection clipboard"
 
-# webserver : racknerd.com. REVOKED
-# alias rack="ssh root@216.127.171.229"
+# webserver : racknerd.com.
+alias rack="ssh root@107.173.229.10"
 
 # rsync to webserver
-alias syncsite="hugo ; rsync -rtvzP ./public/ root@216.127.171.229:/var/www/shubmehetre --delete"
+# alias syncsite="hugo ; rsync -rtvzP ./public/ root@216.127.171.229:/var/www/shubmehetre --delete"
+alias sitesync="hugo -s ~/zzz/repos/main_site/ ; rsync -rtvzP --delete-after ~/zzz/repos/main_site/public/ root@107.173.229.10:/var/www/shubmehetre"
 
 # mpd restart
 alias mpdr="systemctl --user restart mpd.service"

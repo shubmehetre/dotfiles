@@ -41,12 +41,12 @@ color info 			        white 	    black 	    bold
 color article 			    default 	default
 
 #browser w3m
-browser brave
+browser librewolf
 macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser w3m
 macro a set browser "tsp yt-dlp --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser w3m
 macro m set browser "setsid -f mpv" ; open-in-browser ; set browser w3m
-macro w set browser "brave" ; open-in-browser ; set browser w3m
+macro w set browser "librewolf" ; open-in-browser ; set browser w3m
 macro d set browser "dmenuhandler" ; open-in-browser ; set browser w3m
 macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser w3m
 # macro y set browser "youtube-viewer" ; open-in-browser ; set browser w3m (just use mpv)

@@ -1,3 +1,4 @@
+--
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
@@ -14,8 +15,9 @@ vim.g.maplocalleader = " "
 
 -- some utilily maps
 map("n", "<C-s>", ":w<CR>", opts)
+
 -- control backspace to Delete previous word
-map('i', '<C-H>', '<C-W>', opts)
+map("i", "<C-H>", "<C-W>", opts)
 
 -- save file as sudo on files that require root permission
 -- map("c", "w!!", "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!", opts)
@@ -109,7 +111,12 @@ map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 -- map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-map("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>", opts)
+map(
+	"n",
+	"<leader>fc",
+	"<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>",
+	opts
+)
 
 -- nvim treep
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
