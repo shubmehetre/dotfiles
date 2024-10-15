@@ -1,6 +1,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Set vimwiki default folder
+vim.cmd "let g:vimwiki_list = [{'path': '/home/doom/zzz/sync/Vimwiki'}]"
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 

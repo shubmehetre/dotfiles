@@ -5,24 +5,27 @@
 -- Save file using Ctrl S
 vim.keymap.set({ 'n', 'i' }, '<C-s>', '<Esc>:w<CR>', { desc = 'Save a file' })
 
+-- File Tree
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Open File Explorer Tree', silent = true })
+
 -- Clear highlights on search when pressing <Esc> in normal mode. See `:help hlsearch
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- move Lines up or down
-vim.keymap.set('n', 'J', ':move .+1<CR>==', { desc = 'Move line down' })
-vim.keymap.set('n', 'K', ':move .-2<CR>==', { desc = 'Move line down' })
-vim.keymap.set('v', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
-vim.keymap.set('v', 'K', ":move '<-2b<CR>gv=gv", { desc = 'Move selected lines up' })
+vim.keymap.set('n', 'J', ':move .+1<CR>==', { desc = 'Move line down', silent = true })
+vim.keymap.set('n', 'K', ':move .-2<CR>==', { desc = 'Move line down', silent = true })
+vim.keymap.set('v', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move selected lines down', silent = true })
+vim.keymap.set('v', 'K', ":move '<-2b<CR>gv=gv", { desc = 'Move selected lines up', silent = true })
 
 -- Create split
-vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { desc = 'Split vertically' })
-vim.keymap.set('n', '<leader>h', ':split<CR>', { desc = 'Split horizontally' })
+vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { desc = 'Split vertically', silent = true })
+vim.keymap.set('n', '<leader>h', ':split<CR>', { desc = 'Split horizontally', silent = true })
 
 -- Resize Splits
-vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', { desc = 'Resize splits' })
-vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', { desc = 'Resize splits' })
-vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'Resize splits' })
-vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Resize splits' })
+vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', { desc = 'Resize splits', silent = true })
+vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', { desc = 'Resize splits', silent = true })
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'Resize splits', silent = true })
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Resize splits', silent = true })
 
 -- open current file in browser
 -- map("n", "<leader>w", ":exe ':silent !brave %'<CR>", opts)
@@ -33,6 +36,10 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Resize spl
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Goto to Next and Previous Error
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 
 -- Show Function info using hover()
 vim.keymap.set('n', '<leader>ck', '<ESC>:lua vim.lsp.buf.hover()<CR>', { desc = 'Open Function Info', silent = true })
