@@ -64,10 +64,7 @@ alias \
   ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
   weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
 # remaps script
-remaps="source $HOME/.config/bin/remaps"
-
-# Joplin appimg
-alias joplin="$HOME/.local/bin/joplin/Joplin.AppImage"
+alias remaps="source $HOME/.local/bin/remaps"
 
 # mount sdb1
 alias cold="mount /dev/sdb1 $HOME/external/oldie/"
@@ -102,10 +99,14 @@ alias mpdr="systemctl --user restart mpd.service"
 ffc() { du -a $HOME/.config $HOME/.local/bin \
   --exclude '.config/libreoffice' \
   --exclude '.config/BraveSoftware' \
-  --exclude '.config/@joplin' \
-  --exclude '.config/nvim/plugged' \
   --exclude '.config/JetBrains' \
   --exclude '.config/joplin-desktop' |
   awk '{print $2}' | fzf | xargs -r $EDITOR; }
 
 ff() { fzf | xargs -r -I {} $EDITOR {}; }
+
+# Timer
+timer() {
+    (nohup python3 "$HOME/.local/bin/timer.py" "$1" > /dev/null 2>&1 &)
+}
+

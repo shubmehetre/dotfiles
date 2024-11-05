@@ -121,6 +121,7 @@ require('lazy').setup({
         { '<leader>r', group = 'Rename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>w', group = '[V]imwiki' },
         { '<leader>gh', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
@@ -575,7 +576,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
@@ -588,6 +589,7 @@ require('lazy').setup({
           --  completions whenever it has completion options available.
           ['<C-Space>'] = cmp.mapping.complete {},
 
+          -- IMP: Moving from one parameter to next in a funtion:
           -- Think of <c-l> as moving to the right of your snippet expansion.
           --  So if you have a snippet that's like:
           --  function $name($args)
@@ -709,7 +711,7 @@ require('lazy').setup({
   -- require 'shub.plugins.debug',
   -- require 'shub.plugins.indent_line',
   -- require 'shub.plugins.lint',
-  -- require 'shub.plugins.autopairs',
+  require 'shub.plugins.autopairs',
   require 'shub.plugins.neo-tree',
   require 'shub.plugins.vimwiki',
   -- require 'shub.plugins.gitsigns', -- adds gitsigns recommend keymaps

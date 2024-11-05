@@ -78,3 +78,7 @@ vim.keymap.set('n', '<C-S-Tab>', 'gT')
 
 -- Close that TAB
 vim.keymap.set('n', '<C-w>', ':bd<CR>', { silent = true })
+
+-- Vimwiki
+-- vim.keymap.set('n', '<leader>ww', ':VimwikiIndex<CR>', { desc = 'Open Vimwiki in same tab' })
+-- vim.keymap.set('n', '<leader>wt', ':VimwikiIndex<CR>', { desc = 'Open Vimwiki in another tab' })
