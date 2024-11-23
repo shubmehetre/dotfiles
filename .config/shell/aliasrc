@@ -54,10 +54,7 @@ alias \
   xr="sudo xbps-remove -R" \
   xq="xbps-query" \
   z="zathura" \
-  cca="clikan add" \
-  ccs="clikan show" \
-  ccd="clikan delete" \
-  ccp="clikan promote"
+  pwn="ssh hacker@pwn.college"
 
 alias \
   magit="nvim -c MagitOnly" \
@@ -93,6 +90,9 @@ alias sitesync="hugo -s ~/zzz/repos/main_site/ ; rsync -rtvzP --delete-after ~/z
 
 # mpd restart
 alias mpdr="systemctl --user restart mpd.service"
+
+# Start promox VM Spice sessions
+alias rdpmx="remote-viewer /home/doom/zzz/files/proxmox_spice_files/*"
 
 # fzf
 

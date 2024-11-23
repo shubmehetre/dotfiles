@@ -1,9 +1,5 @@
 # Zoomer Shell
 
-# run clikan kanban at start
-export CLIKAN_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/clikan"
-# clikan show
-
 # # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 ## PS1="%B%{$fg[black]%}[%{$fg[magenta]%}%n%{$fg[yellow]%}@%{$fg[magenta]%}%M %{$fg[black]%}%c%{$fg[black]%}]%{$reset_color%}$%b "
