@@ -92,7 +92,7 @@ alias sitesync="hugo -s ~/zzz/repos/main_site/ ; rsync -rtvzP --delete-after ~/z
 alias mpdr="systemctl --user restart mpd.service"
 
 # Start promox VM Spice sessions
-alias rdpmx="remote-viewer /home/doom/zzz/files/proxmox_spice_files/*"
+alias rdp="remote-viewer /home/doom/zzz/files/proxmox_spice_files/*"
 
 # fzf
 

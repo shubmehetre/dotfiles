@@ -62,3 +62,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Singe Status line for split panes
+vim.opt.laststatus = 3
