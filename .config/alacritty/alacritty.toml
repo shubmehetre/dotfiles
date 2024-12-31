@@ -57,7 +57,7 @@ text = "CellBackground"
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.bold]
 family = "JetBrains Mono Nerd Font"
