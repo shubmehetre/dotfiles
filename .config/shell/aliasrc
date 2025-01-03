@@ -94,6 +94,9 @@ alias mpdr="systemctl --user restart mpd.service"
 # Start promox VM Spice sessions
 alias rdp="remote-viewer /home/doom/zzz/files/proxmox_spice_files/*"
 
+# run c code in vim
+alias run="clear; gcc % ; ./a.out"
+
 # fzf
 
 ffc() { du -a $HOME/.config $HOME/.local/bin \

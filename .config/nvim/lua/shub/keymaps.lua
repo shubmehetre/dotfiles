@@ -45,7 +45,7 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', '<leader>ck', '<ESC>:lua vim.lsp.buf.hover()<CR>', { desc = 'Open Function Info', silent = true })
 
 -- Invoke a Terminal
-vim.keymap.set('n', '<leader>it', ':14sp +terminal<CR>i', { desc = 'Invoke Terminal' })
+vim.keymap.set('n', '<leader>it', ':14sp +terminal<CR>i', { desc = 'Invoke Terminal', silent = true })
 
 -- Navigate Terminal
 vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-w>h', { desc = 'Navigate Terminal' })
@@ -82,3 +82,16 @@ vim.keymap.set('n', '<C-w>', ':bd<CR>', { silent = true })
 -- Vimwiki
 -- vim.keymap.set('n', '<leader>ww', ':VimwikiIndex<CR>', { desc = 'Open Vimwiki in same tab' })
 -- vim.keymap.set('n', '<leader>wt', ':VimwikiIndex<CR>', { desc = 'Open Vimwiki in another tab' })
+
+-- Snippet jumps
+vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+  if require('luasnip').expand_or_jumpable() then
+    require('luasnip').expand_or_jump()
+  end
+end, { silent = true })
+
+vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
+  if require('luasnip').jumpable(-1) then
+    require('luasnip').jump(-1)
+  end
+end, { silent = true })
