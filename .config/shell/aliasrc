@@ -110,6 +110,7 @@ ff() { fzf | xargs -r -I {} $EDITOR {}; }
 
 # Timer
 timer() {
-    (nohup python3 "$HOME/.local/bin/timer.py" "$1" > /dev/null 2>&1 &)
+    (nohup python3 -u "$HOME/.local/bin/timer.py" "$1" > /dev/null 2>&1 &)
 }
+
 
